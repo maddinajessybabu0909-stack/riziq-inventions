@@ -235,6 +235,10 @@
   .liquid-node { position: absolute; z-index: 2; top: 0.25rem; left: -0.68rem; display: grid; width: 1.1rem; height: 1.1rem; place-items: center; border: 3px solid var(--about-surface-deep); border-radius: 999px; background: var(--about-track); }
   .liquid-node span { width: 0.32rem; height: 0.32rem; border-radius: 999px; background: var(--hero-foreground); }
   .liquid-index { color: var(--primary); font-family: var(--font-display); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; }
+  .about-step { cursor: default; transition: background-color 220ms ease, transform 220ms ease, border-color 220ms ease; }
+  .about-step:hover { background-color: color-mix(in oklab, var(--primary) 14%, var(--hero-soft)); transform: translateY(-3px); }
+  .about-step-number { display: block; font-size: 0.75rem; font-weight: 800; color: var(--primary); transition: color 220ms ease, transform 220ms ease; }
+  .about-step:hover .about-step-number { color: var(--hero-foreground); transform: translateX(2px); }
 }
 
 @media (max-width: 767px) {
