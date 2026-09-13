@@ -41,6 +41,7 @@ export function ServicesCarousel() {
   const [visibleCount, setVisibleCount] = useState(3);
   const [activePage, setActivePage] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [progressCycle, setProgressCycle] = useState(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const pages = useMemo(() => {
@@ -68,6 +69,7 @@ export function ServicesCarousel() {
     if (paused || pages.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     timerRef.current = setInterval(() => {
       setActivePage((current) => (current + 1) % pages.length);
+      setProgressCycle((current) => current + 1);
     }, 3500);
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
@@ -76,16 +78,27 @@ export function ServicesCarousel() {
 
   const move = (direction: number) => {
     setActivePage((current) => (current + direction + pages.length) % pages.length);
+    setProgressCycle((current) => current + 1);
+  };
+
+  const selectPage = (index: number) => {
+    setActivePage(index);
+    setProgressCycle((current) => current + 1);
+  };
+
+  const resume = () => {
+    setPaused(false);
+    setProgressCycle((current) => current + 1);
   };
 
   return (
     <div
       className="services-carousel mt-10"
       onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      onMouseLeave={resume}
       onFocusCapture={() => setPaused(true)}
       onBlurCapture={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) setPaused(false);
+        if (!event.currentTarget.contains(event.relatedTarget)) resume();
       }}
       aria-roledescription="carousel"
       aria-label="RIZIQ services"
@@ -129,11 +142,13 @@ export function ServicesCarousel() {
               variant="ghost"
               size="icon"
               className="services-carousel-dot-control"
-              onClick={() => setActivePage(index)}
+              onClick={() => selectPage(index)}
               aria-label={`Show service group ${index + 1}`}
               aria-current={index === activePage ? "true" : undefined}
             >
-              <span className={`services-carousel-dot ${index === activePage ? "active" : ""}`} />
+              <span className={`services-carousel-dot ${index === activePage ? "active" : ""}`}>
+                {index === activePage ? <span key={progressCycle} className="services-carousel-progress" /> : null}
+              </span>
             </Button>
           ))}
         </div>

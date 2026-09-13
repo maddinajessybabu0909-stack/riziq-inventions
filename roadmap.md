@@ -21,3 +21,4 @@
 - [x] Restore the original no-hover Projects layout with quotation blocks
 - [x] Expand Services with mechanical, MATLAB simulation and civil engineering disciplines
 - [x] Add a uniform 3.5-second auto-scrolling homepage services carousel
+- [x] Synchronize the service carousel dots with an animated 3.5-second timeline
