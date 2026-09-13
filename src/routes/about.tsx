@@ -56,12 +56,18 @@ function AboutPage() {
   }, []);
 
   return <main className="min-h-screen bg-background">
-    <section className="about-editorial overflow-hidden pb-24 pt-36 text-hero-foreground md:pb-32 md:pt-44">
+    <section className="about-editorial relative overflow-hidden pb-24 pt-36 text-hero-foreground md:pb-32 md:pt-44">
       <div className="mx-auto max-w-6xl px-6 md:px-8">
-        <header className="text-center">
-          <p className="about-kicker">Our genesis</p>
-          <h1 className="mx-auto mt-6 max-w-5xl text-5xl font-bold leading-[0.95] md:text-8xl">The story behind <span className="text-primary">RIZIQ.</span></h1>
-          <p className="mx-auto mt-7 max-w-2xl text-base leading-7 text-hero-muted md:text-lg">Ideas become valuable when they work in the real world. We bring research, product thinking and engineering together to solve meaningful challenges.</p>
+        <header className="relative border-b border-hero-border pb-14 md:pb-20">
+          <p className="about-kicker">Research · Learning · Engineering</p>
+          <h1 className="mt-6 max-w-5xl text-5xl font-bold leading-[0.95] md:text-8xl">We turn curiosity into <span className="text-primary">capability.</span></h1>
+          <div className="mt-8 grid gap-7 md:grid-cols-[1fr_1fr] md:items-end">
+            <p className="max-w-xl text-lg leading-8 text-hero-muted md:text-xl">RIZIQ exists to close the gap between understanding technology and building something meaningful with it.</p>
+            <p className="max-w-lg text-sm leading-7 text-hero-muted md:justify-self-end">We unite clear teaching, practical experimentation and disciplined engineering—helping learners, teams and organizations move confidently from an idea to real-world impact.</p>
+          </div>
+          <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-md border border-hero-border bg-hero-border sm:grid-cols-4">
+            {["Learn", "Experiment", "Engineer", "Create impact"].map((item, index) => <div key={item} className="bg-hero-soft px-4 py-4"><span className="block text-xs font-bold text-primary">0{index + 1}</span><strong className="mt-1 block text-sm">{item}</strong></div>)}
+          </div>
         </header>
 
         <div className="mt-20 grid items-center gap-14 md:grid-cols-[0.9fr_1.1fr] md:gap-20">

@@ -13,3 +13,4 @@
 - [x] Add verified founder profile and portrait to the About page
 - [x] Redesign About with circular transparent founder portrait and liquid-fill scroll timeline
 - [x] Refine About education, purpose classroom scene, mission and vision, plus homepage About introduction
+- [x] Strengthen the About opening story and add company LinkedIn and Instagram links
