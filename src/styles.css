@@ -66,9 +66,13 @@
   --color-hero-muted: var(--hero-muted);
   --color-hero-border: var(--hero-border);
   --color-hero-soft: var(--hero-soft);
+  --color-footer-foreground: var(--footer-foreground);
+  --color-footer-muted: var(--footer-muted);
+  --color-footer-border: var(--footer-border);
   --shadow-nav: var(--shadow-nav);
   --shadow-button: var(--shadow-button);
   --shadow-media: var(--shadow-media);
+  --shadow-footer: var(--shadow-footer);
 }
 
 :root {
@@ -117,6 +121,11 @@
   --hero-line: linear-gradient(90deg, transparent, oklch(0.72 0.18 215 / 70%), transparent);
   --section: oklch(0.965 0.015 243);
   --cta: linear-gradient(110deg, oklch(0.21 0.13 263), oklch(0.34 0.18 254), oklch(0.52 0.15 215));
+  --footer-surface: oklch(0.19 0.065 257);
+  --footer-foreground: oklch(0.98 0.004 248);
+  --footer-muted: oklch(0.76 0.025 246);
+  --footer-border: oklch(1 0 0 / 13%);
+  --shadow-footer: 0 24px 60px oklch(0.18 0.06 258 / 22%);
 }
 
 .dark {
@@ -178,6 +187,12 @@
   .bg-hero-line { background: var(--hero-line); }
   .bg-section { background-color: var(--section); }
   .bg-cta { background: var(--cta); }
+  .page-intro { background: linear-gradient(125deg, oklch(0.18 0.1 260), oklch(0.31 0.13 244)); }
+  .footer-panel { background: var(--footer-surface); }
+  .footer-logo { filter: brightness(0) invert(1); }
+  .footer-link { color: var(--footer-muted); transition: color 180ms ease; }
+  .footer-link:hover { color: var(--footer-foreground); }
+  .status-dot { background: var(--primary); box-shadow: 0 0 0 4px oklch(0.66 0.18 208 / 18%); }
   .nav-link { position: relative; transition: color 180ms ease; }
   .nav-link:hover, .nav-link.active { color: var(--highlight); }
   .nav-link.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -10px; height: 2px; background: var(--highlight); }
@@ -189,6 +204,10 @@
   .service-violet { color: oklch(0.59 0.24 296); background: oklch(0.94 0.035 296); }
   .service-teal { color: oklch(0.6 0.14 194); background: oklch(0.93 0.055 192); }
   .stat-icon { display: grid; width: 2.5rem; height: 2.5rem; flex: none; place-items: center; border-radius: 0.4rem; background: oklch(0.93 0.045 245); color: var(--highlight); }
+  .content-card { border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); padding: 1.75rem; box-shadow: 0 8px 24px oklch(0.22 0.05 258 / 6%); }
+  .form-field { display: grid; gap: 0.5rem; font-size: 0.875rem; font-weight: 700; color: var(--foreground); }
+  .form-field input, .form-field textarea { width: 100%; border: 1px solid var(--input); border-radius: var(--radius); background: var(--background); padding: 0.75rem 0.875rem; font-family: var(--font-sans); font-weight: 400; color: var(--foreground); outline: none; }
+  .form-field input:focus, .form-field textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px oklch(0.66 0.18 208 / 14%); }
 }
 
 @media (max-width: 767px) {
