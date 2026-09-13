@@ -18,7 +18,7 @@ const galleryImages = [
   { src: labWideImage.url, alt: "Students learning together in a computer laboratory", caption: "Hands-on learning environments" },
   { src: recognitionImage.url, alt: "RIZIQ founder receiving recognition at an institution", caption: "Honored for the great work", position: "center 22%" },
   { src: collaborationImage.url, alt: "RIZIQ representatives presenting a collaboration document", caption: "Institutional collaboration" },
-  { src: conferenceImage.url, alt: "RIZIQ founder with educators and industry representatives at a conference", caption: "Ideas shared across communities" },
+  { src: conferenceImage.url, alt: "RIZIQ founder with educators and industry representatives at a conference", caption: "External Co-Chair at International Conference" },
   { src: agreementImage.url, alt: "RIZIQ representatives marking an institutional agreement", caption: "Partnerships built for impact" },
 ];
 
