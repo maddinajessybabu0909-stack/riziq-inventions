@@ -11,3 +11,4 @@
 - [x] Update footer contact phone and email
 - [x] Verify expanded pages across desktop and mobile
 - [x] Add verified founder profile and portrait to the About page
+- [ ] Redesign About with circular transparent founder portrait and liquid-fill scroll timeline
