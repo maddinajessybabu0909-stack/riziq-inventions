@@ -3,7 +3,10 @@ import { ArrowUpRight, Instagram, Linkedin, Mail, Menu, Phone, X } from "lucide-
 import { useState } from "react";
 
 import horizontalLogo from "@/assets/riziq-logo-horizontal.png";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { Button } from "@/components/ui/button";
+
+const WHATSAPP_LINK = "https://api.whatsapp.com/send?phone=919014314025&text=hi%2C%20I%20need%20to%20discuss%20something%20with%20you%20regarding%20the%20company";
 
 const navigation = [
   { label: "Home", to: "/" },
@@ -114,6 +117,7 @@ export function SiteFooter() {
             <div className="mt-5 grid gap-3 text-sm font-semibold">
               <a className="footer-link inline-flex items-center gap-2" href="tel:+919014314025"><Phone className="size-4" /> +91 90143-14025</a>
               <a className="footer-link inline-flex items-center gap-2" href="mailto:info@riziq.in"><Mail className="size-4" /> info@riziq.in</a>
+              <a className="footer-link inline-flex items-center gap-2" href={WHATSAPP_LINK} target="_blank" rel="noreferrer"><WhatsAppIcon className="size-4" /> WhatsApp</a>
             </div>
             <div className="mt-5 flex items-center gap-2" aria-label="RIZIQ social media">
               <Button asChild variant="outline" size="icon" className="border-footer-border bg-hero-soft text-footer-foreground hover:bg-hero-soft hover:text-primary">
@@ -121,6 +125,9 @@ export function SiteFooter() {
               </Button>
               <Button asChild variant="outline" size="icon" className="border-footer-border bg-hero-soft text-footer-foreground hover:bg-hero-soft hover:text-primary">
                 <a href="https://www.instagram.com/riziq.in/" target="_blank" rel="noreferrer" aria-label="RIZIQ on Instagram"><Instagram /></a>
+              </Button>
+              <Button asChild variant="outline" size="icon" className="border-footer-border bg-hero-soft text-footer-foreground hover:bg-hero-soft hover:text-primary">
+                <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" aria-label="RIZIQ on WhatsApp"><WhatsAppIcon className="size-4" /></a>
               </Button>
             </div>
             <Button asChild className="mt-5 font-bold"><Link to="/contact">Send an enquiry <ArrowUpRight /></Link></Button>

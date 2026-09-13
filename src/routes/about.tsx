@@ -5,9 +5,12 @@ import { ArrowRight, ArrowUpRight, Compass, Eye, FlaskConical, Gauge, Graduation
 import classroomImage from "@/assets/riziq-purpose-classroom.png.asset.json";
 import jessyPortrait from "@/assets/jessy-yadav-transparent.png";
 import { AboutGalleryCarousel } from "@/components/about-gallery-carousel";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { ImpactStats } from "@/components/impact-stats";
 import { PartnershipSection } from "@/components/partnership-section";
 import { Button } from "@/components/ui/button";
+
+const WHATSAPP_LINK = "https://api.whatsapp.com/send?phone=919014314025&text=hi%2C%20I%20need%20to%20discuss%20something%20with%20you%20regarding%20the%20company";
 
 export const Route = createFileRoute("/about")({
   head: () => ({ meta: [
@@ -108,7 +111,9 @@ function AboutPage() {
               </div>
             </div>
             <Button asChild className="mt-8 font-bold">
-              <Link to="/contact">Talk to Jessy <ArrowRight /></Link>
+              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" aria-label="Chat with Jessy on WhatsApp">
+                <WhatsAppIcon className="size-4" /> Talk to Jessy on WhatsApp
+              </a>
             </Button>
           </div>
         </div>
