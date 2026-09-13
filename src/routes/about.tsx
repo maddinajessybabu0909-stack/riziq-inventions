@@ -66,7 +66,12 @@ function AboutPage() {
             <p className="max-w-lg text-sm leading-7 text-hero-muted md:justify-self-end">We unite clear teaching, practical experimentation and disciplined engineering—helping learners, teams and organizations move confidently from an idea to real-world impact.</p>
           </div>
           <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-md border border-hero-border bg-hero-border sm:grid-cols-4">
-            {["Learn", "Experiment", "Engineer", "Create impact"].map((item, index) => <div key={item} className="bg-hero-soft px-4 py-4"><span className="block text-xs font-bold text-primary">0{index + 1}</span><strong className="mt-1 block text-sm">{item}</strong></div>)}
+            {["Learn", "Experiment", "Engineer", "Create impact"].map((item, index) => (
+              <div key={item} className="about-step group bg-hero-soft px-4 py-4">
+                <span className="about-step-number">0{index + 1}</span>
+                <strong className="mt-1 block text-sm transition-colors duration-200 group-hover:text-hero-foreground">{item}</strong>
+              </div>
+            ))}
           </div>
         </header>
 
