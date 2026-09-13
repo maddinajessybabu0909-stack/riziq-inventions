@@ -1,21 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  BookOpen,
-  Bot,
-  BrainCircuit,
-  Building2,
-  Code2,
-  Cpu,
-  DraftingCompass,
-  GraduationCap,
   Lightbulb,
-  RadioTower,
-  Sigma,
   ThumbsUp,
   Users,
 } from "lucide-react";
 import heroImage from "@/assets/riziq-hero-natural.jpg";
 import partnerImage from "@/assets/riziq-partner-natural.jpg";
+import { ServicesCarousel } from "@/components/services-carousel";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
@@ -38,21 +29,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
-
-import { services as serviceCatalogue } from "@/lib/services-data";
-
-const serviceIcons = {
-  "software-development": Code2,
-  "ai-machine-learning": BrainCircuit,
-  "iot-solutions": RadioTower,
-  robotics: Bot,
-  "embedded-systems": Cpu,
-  "mechanical-engineering-cad-cae": DraftingCompass,
-  "matlab-engineering-simulation": Sigma,
-  "civil-engineering-design": Building2,
-  "training-workshops": GraduationCap,
-  "research-publications": BookOpen,
-} as const;
 
 const stats = [
   { value: "500+", label: "Projects Delivered", icon: Lightbulb },
@@ -89,19 +65,7 @@ function Index() {
           <p className="section-kicker">What we do</p>
           <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">Our Core <span className="text-highlight">Services</span></h2>
           <p className="mt-3 max-w-2xl text-muted-foreground">We deliver end-to-end technology solutions - from engineering to research publication - to turn your ideas into scalable and impactful outcomes.</p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            {serviceCatalogue.map((service, index) => {
-              const Icon = serviceIcons[service.slug];
-              const tone = index % 3 === 0 ? "service-blue" : index % 3 === 1 ? "service-violet" : "service-teal";
-              return (
-                <Link key={service.slug} to="/services/$service" params={{ service: service.slug }} className="service-card group block w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)] xl:w-[calc(25%-0.75rem)]">
-                  <div className={`service-icon ${tone}`}><Icon className="size-6" /></div>
-                  <h3 className="mt-5 text-sm font-extrabold leading-5">{service.title}</h3>
-                  <p className="mt-2 text-xs leading-5 text-muted-foreground">{service.short}</p>
-                </Link>
-              );
-            })}
-          </div>
+          <ServicesCarousel />
         </div>
       </section>
 
