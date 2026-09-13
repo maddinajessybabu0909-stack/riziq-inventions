@@ -114,6 +114,10 @@
   --hero-muted: oklch(0.87 0.025 244);
   --hero-border: oklch(0.9 0.05 244 / 55%);
   --hero-soft: oklch(1 0 0 / 10%);
+  --schematic-blue: oklch(0.72 0.16 232);
+  --schematic-violet: oklch(0.7 0.19 296);
+  --schematic-teal: oklch(0.8 0.12 185);
+  --schematic-amber: oklch(0.84 0.14 75);
   --shadow-nav: 0 12px 40px oklch(0.18 0.06 258 / 14%);
   --shadow-button: 0 8px 24px oklch(0.62 0.22 225 / 25%);
   --shadow-media: 0 18px 45px oklch(0.22 0.08 260 / 18%);
