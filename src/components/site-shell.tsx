@@ -86,7 +86,7 @@ export function SiteFooter() {
             <Link to="/" className="inline-flex" aria-label="RIZIQ home">
               <img src={horizontalLogo} alt="RIZIQ" className="h-11 w-auto object-contain object-left" />
             </Link>
-            <p className="mt-5 max-w-sm text-sm leading-6 text-footer-muted">
+            <p className="mt-5 max-w-sm text-sm font-semibold leading-6 text-white">
               RIZIQ Inventions
               <br />
               Beyond Ideas - Into Innovation
