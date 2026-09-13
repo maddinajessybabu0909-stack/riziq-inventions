@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef } from "react";
-import { ArrowRight, Compass, Eye, FlaskConical, Gauge, GraduationCap, Lightbulb, Target, ThumbsUp, Users } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Compass, Eye, FlaskConical, Gauge, GraduationCap, Lightbulb, Target, ThumbsUp, Users } from "lucide-react";
 
 import classroomImage from "@/assets/riziq-purpose-classroom.png.asset.json";
 import jessyPortrait from "@/assets/jessy-yadav-transparent.png";
@@ -68,8 +68,13 @@ function AboutPage() {
           <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-md border border-hero-border bg-hero-border sm:grid-cols-4">
             {["Learn", "Experiment", "Engineer", "Create impact"].map((item, index) => (
               <div key={item} className="about-step group bg-hero-soft px-4 py-4">
+                <span className="about-step-glow" aria-hidden="true" />
                 <span className="about-step-number">0{index + 1}</span>
-                <strong className="mt-1 block text-sm transition-colors duration-200 group-hover:text-hero-foreground">{item}</strong>
+                <strong className="relative mt-1 flex items-center justify-between gap-2 text-sm transition-colors duration-200 group-hover:text-hero-foreground">
+                  {item}
+                  <ArrowUpRight className="size-3.5 shrink-0 -translate-x-1 translate-y-1 text-primary opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
+                </strong>
+                <span className="about-step-bar" aria-hidden="true" />
               </div>
             ))}
           </div>
