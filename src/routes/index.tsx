@@ -55,6 +55,8 @@ function Index() {
                 className="h-auto w-full max-w-[23rem] object-contain object-left"
                 width={847}
                 height={385}
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
