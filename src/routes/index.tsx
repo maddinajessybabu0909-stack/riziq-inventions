@@ -1,11 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import {
-  Lightbulb,
-  ThumbsUp,
-  Users,
-} from "lucide-react";
 import heroImage from "@/assets/riziq-hero-natural.jpg";
 import partnerImage from "@/assets/riziq-partner-natural.jpg";
+import { ImpactStats } from "@/components/impact-stats";
 import { ServicesCarousel } from "@/components/services-carousel";
 import { Button } from "@/components/ui/button";
 
@@ -29,12 +25,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
-
-const stats = [
-  { value: "500+", label: "Projects Delivered", icon: Lightbulb },
-  { value: "50+", label: "Happy Clients", icon: ThumbsUp },
-  { value: "5+", label: "Years of Experience", icon: Users },
-];
 
 function Index() {
   return (
@@ -82,15 +72,7 @@ function Index() {
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
               {["Learn clearly", "Build hands-on", "Create impact"].map((item, index) => <div key={item} className="border-l-2 border-primary pl-3"><span className="text-xs font-bold text-muted-foreground">0{index + 1}</span><strong className="mt-1 block text-sm">{item}</strong></div>)}
             </div>
-            <div className="mt-8 grid grid-cols-3 gap-4 border-t border-border pt-7">
-              {stats.map(({ value, label, icon: Icon }) => (
-                <div key={label} className="flex flex-col items-center text-center">
-                  <div className="stat-icon"><Icon className="size-5" /></div>
-                  <strong className="mt-2 block text-lg font-extrabold">{value}</strong>
-                  <span className="whitespace-nowrap text-[0.65rem] leading-4 text-muted-foreground lg:text-xs">{label}</span>
-                </div>
-              ))}
-            </div>
+            <ImpactStats className="mt-8 border-t border-border pt-7" />
           </div>
         </div>
       </section>
