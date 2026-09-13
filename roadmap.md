@@ -12,4 +12,4 @@
 - [x] Verify expanded pages across desktop and mobile
 - [x] Add verified founder profile and portrait to the About page
 - [x] Redesign About with circular transparent founder portrait and liquid-fill scroll timeline
-- [ ] Refine About education, purpose classroom scene, mission and vision, plus homepage About introduction
+- [x] Refine About education, purpose classroom scene, mission and vision, plus homepage About introduction
