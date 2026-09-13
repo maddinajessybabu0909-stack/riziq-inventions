@@ -96,9 +96,9 @@ export function SiteFooter() {
 
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-footer-muted">Explore</p>
-            <div className="mt-4 grid grid-cols-2 gap-x-4 gap-y-3 text-sm font-semibold">
-              {navigation.slice(1).map((item) => (
-                <Link key={item.to} to={item.to} className="footer-link">{item.label}</Link>
+            <div className="mt-4 flex flex-col gap-2.5 text-sm font-semibold">
+              {navigation.map((item) => (
+                <Link key={item.to} to={item.to} className="footer-link w-fit">{item.label}</Link>
               ))}
             </div>
           </div>
