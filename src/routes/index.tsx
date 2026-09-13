@@ -128,11 +128,11 @@ function Index() {
             <div className="absolute inset-0 ring-1 ring-inset ring-border/30" />
           </div>
           <div>
-            <p className="section-kicker">Why RIZIQ?</p>
-            <h2 className="mt-2 text-3xl font-extrabold leading-tight md:text-4xl">From learning and research<br />to <span className="text-highlight">working technology.</span></h2>
-            <p className="mt-5 leading-7 text-muted-foreground">RIZIQ brings learners, researchers and engineers into one practical process—understand the challenge, build the right system and improve it through real-world use.</p>
+            <p className="section-kicker">About RIZIQ</p>
+            <h2 className="mt-2 text-3xl font-extrabold leading-tight md:text-4xl">Where curious minds learn,<br />experiment and <span className="text-highlight">build what matters.</span></h2>
+            <p className="mt-5 leading-7 text-muted-foreground">RIZIQ is a research and technology company built around learning by doing. We connect expert guidance, hands-on engineering and real-world problem solving to help people turn knowledge into useful technology.</p>
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
-              {["Research-led", "Hands-on", "Built for impact"].map((item, index) => <div key={item} className="border-l-2 border-primary pl-3"><span className="text-xs font-bold text-muted-foreground">0{index + 1}</span><strong className="mt-1 block text-sm">{item}</strong></div>)}
+              {["Learn clearly", "Build hands-on", "Create impact"].map((item, index) => <div key={item} className="border-l-2 border-primary pl-3"><span className="text-xs font-bold text-muted-foreground">0{index + 1}</span><strong className="mt-1 block text-sm">{item}</strong></div>)}
             </div>
             <div className="mt-8 grid grid-cols-3 gap-4 border-t border-border pt-7">
               {stats.map(({ value, label, icon: Icon }) => (
