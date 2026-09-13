@@ -84,9 +84,10 @@ function Index() {
             </div>
             <div className="mt-8 grid grid-cols-3 gap-4 border-t border-border pt-7">
               {stats.map(({ value, label, icon: Icon }) => (
-                <div key={label} className="flex gap-3">
+                <div key={label} className="flex flex-col items-center text-center">
                   <div className="stat-icon"><Icon className="size-5" /></div>
-                  <div><strong className="block text-lg font-extrabold">{value}</strong><span className="text-xs leading-4 text-muted-foreground">{label}</span></div>
+                  <strong className="mt-2 block text-lg font-extrabold">{value}</strong>
+                  <span className="whitespace-nowrap text-[0.65rem] leading-4 text-muted-foreground lg:text-xs">{label}</span>
                 </div>
               ))}
             </div>
