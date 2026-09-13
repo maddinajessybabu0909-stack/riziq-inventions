@@ -20,4 +20,4 @@
 - [x] Restore an alternating editorial layout for the Projects overview
 - [x] Restore the original no-hover Projects layout with quotation blocks
 - [x] Expand Services with mechanical, MATLAB simulation and civil engineering disciplines
-- [x] Add a three-second auto-scrolling homepage services carousel
+- [x] Add a uniform 3.5-second auto-scrolling homepage services carousel
