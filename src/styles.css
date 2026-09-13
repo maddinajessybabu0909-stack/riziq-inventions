@@ -361,7 +361,10 @@
 }
 
 @media (min-width: 768px) {
-  .service-detail-offering-last { grid-column: 1 / -1; width: 50%; justify-self: center; }
+  .service-detail-offering-last {
+    grid-column: 1 / -1;
+    background: linear-gradient(90deg, color-mix(in oklab, var(--primary) 6%, var(--card)), var(--card));
+  }
 }
 
 @keyframes services-progress {
