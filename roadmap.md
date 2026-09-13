@@ -17,3 +17,4 @@
 - [x] Refine About journey links and leadership details; replace em dashes site-wide
 - [x] Refocus Projects on AI Hexabot, smart classrooms, EV systems, and serving robots
 - [x] Refresh Projects and project stories with a clean, image-led visual system
+- [x] Restore an alternating editorial layout for the Projects overview
