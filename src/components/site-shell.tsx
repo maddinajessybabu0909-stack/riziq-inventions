@@ -128,7 +128,7 @@ export function SiteFooter() {
         </div>
 
         <div className="flex flex-col gap-2 pt-6 text-xs text-footer-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 RIZIQ. Research · Innovation · Zenith.</p>
+          <p>© 2026 RIZIQ. All rights reserved. Research · Innovation · Zenith.</p>
           <p>Built around useful technology and measurable impact.</p>
         </div>
       </div>
