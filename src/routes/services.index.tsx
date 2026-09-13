@@ -23,7 +23,7 @@ function ServicesPage() {
       <section className="services-schematic-hero pt-32 md:pt-40">
         <div className="pointer-events-none absolute -left-10 -top-10 size-32 rounded-full bg-[color-mix(in_oklab,var(--schematic-teal)_10%,transparent)] blur-3xl" />
         <div className="mx-auto max-w-6xl px-6 pb-16 md:px-8 md:pb-20">
-          <span className="schematic-kicker">Our Expertise</span>
+          <p className="about-kicker">Software · AI · IoT · Robotics · Embedded · Mechanical</p>
           <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.1] md:text-6xl">
             Engineering <span className="schematic-gradient-text">precision</span> solutions for innovation
           </h1>
