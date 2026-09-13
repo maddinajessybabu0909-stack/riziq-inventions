@@ -27,3 +27,4 @@
 - [x] Expand impact statistics and add scroll-triggered count animations
 - [x] Add the InstructIQ collaboration section to the homepage and About page
 - [x] Add a two-image, 3.5-second gallery carousel to the About page
+- [x] Add the transparent MSME registration mark beneath the homepage hero actions
