@@ -90,7 +90,7 @@ export function SiteFooter() {
               Research-led technology for organizations ready to turn ambitious ideas into useful, scalable products.
             </p>
             <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-footer-border px-3 py-1.5 text-xs font-semibold text-footer-muted">
-              <span className="status-dot size-2 rounded-full" /> Open for collaboration
+              <span className="status-dot size-2 animate-pulse rounded-full" /> All systems Operational
             </div>
           </div>
 
