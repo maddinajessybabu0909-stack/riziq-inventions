@@ -129,8 +129,11 @@ function Index() {
           </div>
           <div>
             <p className="section-kicker">Why RIZIQ?</p>
-            <h2 className="mt-2 text-3xl font-extrabold leading-tight md:text-4xl">Your Partner in<br />Research & <span className="text-highlight">Innovation</span></h2>
-            <p className="mt-5 leading-7 text-muted-foreground">We combine technical expertise, creative thinking and a passion for innovation to deliver solutions that make a difference.</p>
+            <h2 className="mt-2 text-3xl font-extrabold leading-tight md:text-4xl">From learning and research<br />to <span className="text-highlight">working technology.</span></h2>
+            <p className="mt-5 leading-7 text-muted-foreground">RIZIQ brings learners, researchers and engineers into one practical process—understand the challenge, build the right system and improve it through real-world use.</p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              {["Research-led", "Hands-on", "Built for impact"].map((item, index) => <div key={item} className="border-l-2 border-primary pl-3"><span className="text-xs font-bold text-muted-foreground">0{index + 1}</span><strong className="mt-1 block text-sm">{item}</strong></div>)}
+            </div>
             <div className="mt-8 grid grid-cols-3 gap-4 border-t border-border pt-7">
               {stats.map(({ value, label, icon: Icon }) => (
                 <div key={label} className="flex gap-3">
