@@ -101,7 +101,10 @@ function ServiceDetail() {
             </div>
             <div className="mt-10 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-2">
               {service.offerings.map((offering, index) => (
-                <article key={offering.title} className="service-detail-offering">
+                <article
+                  key={offering.title}
+                  className={`service-detail-offering ${service.offerings.length % 2 === 1 && index === service.offerings.length - 1 ? "service-detail-offering-last" : ""}`}
+                >
                   <div className="flex items-baseline gap-3">
                     <span className="service-detail-number">0{index + 1}</span>
                     <h3 className="text-lg font-semibold leading-6">{offering.title}</h3>
