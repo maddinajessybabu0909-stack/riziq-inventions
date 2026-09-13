@@ -130,7 +130,7 @@ function AboutPage() {
     </div></section>
 
     <section className="bg-section py-20 md:py-28"><div className="mx-auto max-w-6xl px-6 md:px-8"><div className="grid gap-8 md:grid-cols-[0.7fr_1.3fr]"><div><p className="section-kicker">How we work</p><h2 className="mt-3 text-3xl font-bold md:text-4xl">Curious by nature. Rigorous by design.</h2></div><div className="grid gap-5 md:grid-cols-3">{principles.map(({icon: Icon, title, text}) => <article key={title} className="content-card"><div className="stat-icon"><Icon /></div><h3 className="mt-5 text-lg font-bold">{title}</h3><p className="mt-3 text-sm leading-6 text-muted-foreground">{text}</p></article>)}</div></div>
-      <div className="mt-14 grid grid-cols-3 gap-4 border-t border-border pt-9">{[{value:"500+",label:"Projects delivered",icon:Lightbulb},{value:"50+",label:"Happy clients",icon:ThumbsUp},{value:"5+",label:"Years of experience",icon:Users}].map(({value,label,icon:Icon}) => <div key={label} className="text-center"><Icon className="mx-auto size-5 text-highlight"/><strong className="mt-2 block text-2xl">{value}</strong><span className="text-xs text-muted-foreground">{label}</span></div>)}</div>
+      <div className="mt-14 grid grid-cols-3 gap-4 border-t border-border pt-9">{[{value:"500+",label:"Projects delivered",icon:Lightbulb},{value:"50+",label:"Happy clients",icon:ThumbsUp},{value:"5+",label:"Years of experience",icon:Users}].map(({value,label,icon:Icon}) => <div key={label} className="text-center"><Icon className="mx-auto size-5 text-highlight"/><strong className="mt-2 block text-2xl">{value}</strong><span className="whitespace-nowrap text-xs text-muted-foreground">{label}</span></div>)}</div>
     </div></section>
   </main>;
 }
