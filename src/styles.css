@@ -209,9 +209,11 @@
   .services-carousel-track { display: flex; transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1); }
   .services-carousel-page { display: grid; width: 100%; min-width: 100%; gap: 1rem; align-items: stretch; }
   .services-carousel-page .service-card { height: 100%; }
-  .services-carousel-dot-control { width: 1rem; height: 1.5rem; padding: 0; }
-  .services-carousel-dot { display: block; width: 0.5rem; height: 0.5rem; border-radius: 999px; background: var(--border); transition: width 220ms ease, background-color 220ms ease; }
-  .services-carousel-dot.active { width: 1.25rem; background: var(--primary); }
+  .services-carousel-dot-control { width: 1.5rem; height: 1.5rem; padding: 0; }
+  .services-carousel-dot { position: relative; display: block; width: 0.5rem; height: 0.5rem; overflow: hidden; border-radius: 999px; background: var(--border); transition: width 220ms ease; }
+  .services-carousel-dot.active { width: 2.5rem; }
+  .services-carousel-progress { position: absolute; inset: 0; transform: scaleX(0); transform-origin: left; border-radius: inherit; background: var(--primary); animation: services-progress 3.5s linear forwards; }
+  .services-carousel:hover .services-carousel-progress, .services-carousel:focus-within .services-carousel-progress { animation-play-state: paused; }
   .service-icon { margin-inline: auto; display: grid; width: 3.25rem; height: 3.25rem; place-items: center; border-radius: 999px; }
   .service-blue { color: oklch(0.6 0.22 256); background: oklch(0.93 0.04 249); }
   .service-violet { color: oklch(0.59 0.24 296); background: oklch(0.94 0.035 296); }
@@ -307,12 +309,18 @@
   .project-showcase, .project-showcase:nth-child(even) { grid-template-columns: 1fr; gap: 1.75rem; }
   .project-showcase:nth-child(even) .project-showcase-media { order: 0; }
   .project-showcase-content { padding-block: 0; }
+  .services-carousel-dot-control { width: 1.25rem; }
   .services-carousel-dot { width: 0.4rem; height: 0.4rem; }
-  .services-carousel-dot.active { width: 0.8rem; }
+  .services-carousel-dot.active { width: 1.75rem; }
+}
+
+@keyframes services-progress {
+  to { transform: scaleX(1); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
   .services-carousel-track { transition: none; }
+  .services-carousel-progress { animation: none; transform: scaleX(1); }
   .liquid-timeline { --timeline-progress: 1 !important; }
 }
