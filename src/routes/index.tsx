@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
+  BookOpen,
   Bot,
   BrainCircuit,
   Code2,
@@ -72,6 +73,12 @@ const services = [
     icon: GraduationCap,
     tone: "service-blue",
   },
+  {
+    title: "Research & Publications",
+    text: "Guided Research, Publishable Work",
+    icon: BookOpen,
+    tone: "service-violet",
+  },
 ];
 
 const stats = [
@@ -108,8 +115,8 @@ function Index() {
         <div className="mx-auto max-w-6xl px-6 md:px-8">
           <p className="section-kicker">What we do</p>
           <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">Our Core <span className="text-highlight">Services</span></h2>
-          <p className="mt-3 max-w-2xl text-muted-foreground">We deliver end-to-end technology solutions to turn your ideas into scalable and impactful products.</p>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+          <p className="mt-3 max-w-2xl text-muted-foreground">We deliver end-to-end technology solutions - from engineering to research publication - to turn your ideas into scalable and impactful outcomes.</p>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {services.map(({ title, text, icon: Icon, tone }) => (
               <article key={title} className="service-card group">
                 <div className={`service-icon ${tone}`}><Icon className="size-6" /></div>
