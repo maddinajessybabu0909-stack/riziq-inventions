@@ -256,6 +256,7 @@
   .service-detail-capability svg { color: var(--detail-accent); }
   .service-detail-band { padding-block: 4rem; }
   .service-detail-offering { min-height: 10rem; background: var(--card); padding: 1.6rem; }
+  .service-detail-offering-last { border-inline: 1px solid var(--border); }
   .service-detail-process { min-height: 9rem; border-top: 3px solid var(--detail-accent); background: var(--detail-soft); padding: 1.5rem; }
   .service-detail-accent { color: var(--detail-accent); }
   .service-detail-faq { border: 1px solid var(--border); border-left: 3px solid var(--detail-accent); background: var(--card); padding: 1.5rem; }
@@ -356,6 +357,11 @@
   .services-carousel-dot { width: 0.4rem; height: 0.4rem; }
   .services-carousel-dot.active { width: 1.75rem; }
   .service-detail-capabilities { grid-template-columns: 1fr; }
+  .service-detail-offering-last { border-inline: 0; }
+}
+
+@media (min-width: 768px) {
+  .service-detail-offering-last { grid-column: 1 / -1; width: 50%; justify-self: center; }
 }
 
 @keyframes services-progress {
