@@ -13,7 +13,7 @@ import {
   ThumbsUp,
   Users,
 } from "lucide-react";
-import logoAsset from "@/assets/riziq-logo.png.asset.json";
+import transparentLogo from "@/assets/riziq-logo-transparent.png";
 import heroImage from "@/assets/riziq-hero.jpg";
 import partnerImage from "@/assets/riziq-partner.jpg";
 
@@ -89,7 +89,7 @@ function Index() {
       <header className="fixed inset-x-0 top-4 z-50 px-4">
         <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between rounded-lg border border-border/70 bg-card/95 px-4 shadow-nav backdrop-blur md:px-6" aria-label="Main navigation">
           <a href="#home" className="shrink-0" aria-label="RIZIQ home">
-            <img src={logoAsset.url} alt="RIZIQ" className="h-11 w-auto object-contain object-left" />
+            <img src={transparentLogo} alt="RIZIQ — Research, Innovation, Zenith" className="h-14 w-auto object-contain object-left md:h-[3.75rem]" />
           </a>
           <div className="hidden items-center gap-7 text-sm font-semibold text-muted-foreground md:flex">
             <a className="nav-link active" href="#home">Home</a>
