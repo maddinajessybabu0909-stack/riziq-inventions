@@ -10,3 +10,4 @@
 - [x] Add service detail pages without pricing and with enquiry actions
 - [x] Update footer contact phone and email
 - [x] Verify expanded pages across desktop and mobile
+- [x] Add verified founder profile and portrait to the About page

@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Compass, FlaskConical, Gauge, Lightbulb, Target, ThumbsUp, Users } from "lucide-react";
 
 import partnerImage from "@/assets/riziq-partner-natural.jpg";
+import jessyPortrait from "@/assets/jessy-yadav-maddina.png.asset.json";
 import { PageIntro } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 
@@ -41,7 +42,10 @@ function AboutPage() {
     <section className="py-20 md:py-24"><div className="mx-auto max-w-6xl px-6 md:px-8"><div className="grid gap-10 md:grid-cols-[0.72fr_1.28fr]"><div><p className="section-kicker">Our journey</p><h2 className="mt-3 text-3xl font-bold">Built one useful step at a time.</h2><p className="mt-5 leading-7 text-muted-foreground">Our story is not about chasing technology trends. It is about learning where technology can remove friction, expand possibility and earn trust.</p></div><ol className="timeline-list">{timeline.map((item) => <li key={item.title} className="timeline-item"><p className="section-kicker">{item.year}</p><h3 className="mt-2 text-xl font-bold">{item.title}</h3><p className="mt-3 text-sm leading-6 text-muted-foreground">{item.text}</p></li>)}</ol></div></div></section>
     <section className="bg-section py-20"><div className="mx-auto max-w-6xl px-6 md:px-8"><p className="section-kicker">How we work</p><h2 className="mt-3 text-3xl font-bold">Curious by nature. Rigorous by design.</h2><div className="mt-10 grid gap-5 md:grid-cols-3">{principles.map(({icon: Icon, title, text}) => <article key={title} className="content-card"><div className="stat-icon"><Icon /></div><h3 className="mt-5 text-lg font-bold">{title}</h3><p className="mt-3 text-sm leading-6 text-muted-foreground">{text}</p></article>)}</div>
       <div className="mt-12 grid grid-cols-3 gap-4 border-t border-border pt-8">{[{value:"500+",label:"Projects delivered",icon:Lightbulb},{value:"50+",label:"Happy clients",icon:ThumbsUp},{value:"5+",label:"Years of experience",icon:Users}].map(({value,label,icon:Icon}) => <div key={label} className="text-center"><Icon className="mx-auto size-5 text-highlight"/><strong className="mt-2 block text-2xl">{value}</strong><span className="text-xs text-muted-foreground">{label}</span></div>)}</div>
-      <div className="mt-14 flex flex-col items-start justify-between gap-5 border-t border-border pt-9 sm:flex-row sm:items-center"><div><p className="section-kicker">The people behind RIZIQ</p><h2 className="mt-2 text-2xl font-bold">Meet the team soon.</h2><p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">We are preparing verified profiles with the real names, roles and experience of the people doing the work.</p></div><Button asChild variant="outline"><Link to="/contact">Talk to the team <ArrowRight /></Link></Button></div>
+      <div className="mt-14 grid items-center gap-8 border-t border-border pt-12 md:grid-cols-[0.8fr_1.2fr] md:gap-14">
+        <div className="overflow-hidden rounded-lg bg-muted shadow-media"><img src={jessyPortrait.url} alt="Jessy Yadav Maddina, Founder and CEO of RIZIQ" className="aspect-[4/5] h-full w-full object-cover object-top" /></div>
+        <div><p className="section-kicker">Leadership</p><h2 className="mt-3 text-3xl font-bold">Jessy Yadav Maddina, M.Tech</h2><p className="mt-2 text-lg font-semibold text-highlight">Founder &amp; CEO</p><div className="mt-7 flex items-center gap-4 border-y border-border py-5"><div className="stat-icon"><Users className="size-5" /></div><div><strong className="block text-xl">5+ Years</strong><span className="text-sm text-muted-foreground">Experience</span></div></div><Button asChild variant="outline" className="mt-7"><Link to="/contact">Talk to Jessy <ArrowRight /></Link></Button></div>
+      </div>
     </div></section>
   </main>;
 }
