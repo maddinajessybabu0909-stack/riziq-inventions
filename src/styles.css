@@ -205,6 +205,13 @@
   .section-kicker { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.24em; color: var(--highlight); }
   .service-card { min-height: 220px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); padding: 1.25rem 1rem; text-align: center; box-shadow: 0 8px 24px oklch(0.22 0.05 258 / 6%); transition: transform 180ms ease, box-shadow 180ms ease; }
   .service-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px oklch(0.22 0.07 258 / 11%); }
+  .services-carousel-window { overflow: hidden; padding-block: 0.4rem 0.75rem; }
+  .services-carousel-track { display: flex; transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1); }
+  .services-carousel-page { display: grid; width: 100%; min-width: 100%; gap: 1rem; align-items: stretch; }
+  .services-carousel-page .service-card { height: 100%; }
+  .services-carousel-dot-control { width: 1.5rem; height: 1.5rem; padding: 0; }
+  .services-carousel-dot { display: block; width: 0.5rem; height: 0.5rem; border-radius: 999px; background: var(--border); transition: width 220ms ease, background-color 220ms ease; }
+  .services-carousel-dot.active { width: 1.25rem; background: var(--primary); }
   .service-icon { margin-inline: auto; display: grid; width: 3.25rem; height: 3.25rem; place-items: center; border-radius: 999px; }
   .service-blue { color: oklch(0.6 0.22 256); background: oklch(0.93 0.04 249); }
   .service-violet { color: oklch(0.59 0.24 296); background: oklch(0.94 0.035 296); }
@@ -304,5 +311,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+  .services-carousel-track { transition: none; }
   .liquid-timeline { --timeline-progress: 1 !important; }
 }

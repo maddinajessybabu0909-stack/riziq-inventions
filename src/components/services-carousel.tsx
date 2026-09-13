@@ -120,14 +120,18 @@ export function ServicesCarousel() {
         </Button>
         <div className="flex items-center gap-2" aria-label={`Service group ${activePage + 1} of ${pages.length}`}>
           {pages.map((page, index) => (
-            <button
+            <Button
               key={page.map((service) => service.slug).join("-")}
               type="button"
-              className={`services-carousel-dot ${index === activePage ? "active" : ""}`}
+              variant="ghost"
+              size="icon"
+              className="services-carousel-dot-control"
               onClick={() => setActivePage(index)}
               aria-label={`Show service group ${index + 1}`}
               aria-current={index === activePage ? "true" : undefined}
-            />
+            >
+              <span className={`services-carousel-dot ${index === activePage ? "active" : ""}`} />
+            </Button>
           ))}
         </div>
         <Button type="button" variant="outline" size="icon" onClick={() => move(1)} aria-label="Next services">
