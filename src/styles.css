@@ -207,6 +207,11 @@
   .nav-link:hover, .nav-link.active { color: var(--highlight); }
   .nav-link.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -10px; height: 2px; background: var(--highlight); }
   .section-kicker { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.24em; color: var(--highlight); }
+  .impact-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 0.75rem; }
+  .impact-stat { display: flex; min-width: 0; flex-direction: column; align-items: center; text-align: center; }
+  .impact-stat-value { margin-top: 0.5rem; min-width: 4ch; font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--foreground); }
+  .impact-stat-label { margin-top: 0.15rem; white-space: nowrap; font-size: 0.68rem; line-height: 1rem; color: var(--muted-foreground); }
+  @media (min-width: 640px) { .impact-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   .service-card { min-height: 220px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); padding: 1.25rem 1rem; text-align: center; box-shadow: 0 8px 24px oklch(0.22 0.05 258 / 6%); transition: transform 180ms ease, box-shadow 180ms ease; }
   .service-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px oklch(0.22 0.07 258 / 11%); }
   .services-carousel-window { overflow: hidden; padding-block: 0.4rem 0.75rem; }
