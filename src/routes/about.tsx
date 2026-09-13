@@ -5,6 +5,7 @@ import { ArrowRight, ArrowUpRight, Compass, Eye, FlaskConical, Gauge, Graduation
 import classroomImage from "@/assets/riziq-purpose-classroom.png.asset.json";
 import jessyPortrait from "@/assets/jessy-yadav-transparent.png";
 import { ImpactStats } from "@/components/impact-stats";
+import { PartnershipSection } from "@/components/partnership-section";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/about")({
@@ -117,6 +118,8 @@ function AboutPage() {
       <div className="overflow-hidden rounded-lg shadow-media"><img src={classroomImage.url} alt="Jessy Yadav Maddina teaching microcontrollers in a digital classroom" className="aspect-[8/5] h-full w-full object-cover" width={1482} height={1062} loading="lazy" /></div>
       <div><p className="section-kicker">Our purpose</p><h2 className="mt-3 text-3xl font-bold md:text-4xl">Turn knowledge into the confidence to build.</h2><p className="mt-5 leading-7 text-muted-foreground">RIZIQ brings concepts to life through clear teaching, practical experimentation and guided engineering. Learners move from understanding how technology works to creating software, electronics and intelligent systems of their own.</p><Button asChild className="mt-7 font-bold"><Link to="/contact">Learn and build with us <ArrowRight /></Link></Button></div>
     </div></section>
+
+    <PartnershipSection />
 
     <section className="bg-cta py-20 text-hero-foreground"><div className="mx-auto max-w-6xl px-6 md:px-8"><div className="grid gap-px overflow-hidden rounded-lg border border-hero-border bg-hero-border md:grid-cols-2">
       <article className="bg-cta p-8 md:p-12"><div className="grid size-12 place-items-center rounded-md border border-hero-border bg-hero-soft"><Target /></div><p className="mt-6 text-xs font-bold uppercase tracking-[0.24em] text-primary">Our mission</p><h2 className="mt-4 text-3xl font-bold leading-tight md:text-4xl">Make advanced technology useful, responsible and reachable.</h2><p className="mt-5 leading-7 text-hero-muted">We close the distance between a promising idea and meaningful adoption by building with the people, conditions and outcomes that define success.</p></article>

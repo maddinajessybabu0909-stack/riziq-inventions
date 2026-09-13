@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImage from "@/assets/riziq-hero-natural.jpg";
 import partnerImage from "@/assets/riziq-partner-natural.jpg";
 import { ImpactStats } from "@/components/impact-stats";
+import { PartnershipSection } from "@/components/partnership-section";
 import { ServicesCarousel } from "@/components/services-carousel";
 import { Button } from "@/components/ui/button";
 
@@ -76,6 +77,8 @@ function Index() {
           </div>
         </div>
       </section>
+
+      <PartnershipSection compact />
 
       <section id="projects" className="bg-cta py-10 text-hero-foreground">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-6 sm:flex-row sm:items-center md:px-8">
