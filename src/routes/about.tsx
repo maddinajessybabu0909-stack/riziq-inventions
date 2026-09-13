@@ -91,14 +91,14 @@ function AboutPage() {
             <h2 className="mt-4 text-3xl font-bold md:text-5xl">Jessy Yadav Maddina</h2>
             <div className="mt-4 flex flex-wrap items-center justify-center gap-2 md:justify-start">
               <span className="text-lg font-semibold text-primary">Founder &amp; CEO</span>
-              <span className="inline-flex items-center gap-1 rounded-full border border-hero-border bg-hero-soft px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-hero-muted">
-                <GraduationCap className="size-3 text-primary" />
+              <span className="leader-pill inline-flex items-center gap-1 rounded-full border border-hero-border bg-hero-soft px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-hero-muted">
+                <GraduationCap className="size-3 text-primary transition-transform duration-300 group-hover:rotate-12" />
                 M.Tech
               </span>
             </div>
-            <div className="mx-auto mt-7 inline-flex items-center gap-4 rounded-lg border border-hero-border bg-hero-soft/60 px-5 py-4 md:mx-0">
-              <div className="grid size-11 place-items-center rounded-md bg-hero-soft text-primary">
-                <Users className="size-5" />
+            <div className="leader-badge group mx-auto mt-7 inline-flex cursor-default items-center gap-4 rounded-lg border border-hero-border bg-hero-soft/60 px-5 py-4 md:mx-0">
+              <div className="grid size-11 place-items-center rounded-md bg-hero-soft text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+                <Users className="size-5 transition-transform duration-300 group-hover:scale-110" />
               </div>
               <div className="text-left">
                 <strong className="block text-2xl">5+ Years</strong>
