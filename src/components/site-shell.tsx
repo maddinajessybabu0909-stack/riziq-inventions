@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight, Mail, Menu, X } from "lucide-react";
+import { ArrowUpRight, Mail, Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
 
 import horizontalLogo from "@/assets/riziq-logo-horizontal.png";
@@ -106,9 +106,11 @@ export function SiteFooter() {
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-footer-muted">Start a project</p>
             <p className="mt-4 text-sm leading-6 text-footer-muted">Tell us what you are exploring. We’ll help shape the next practical step.</p>
-            <Button asChild className="mt-5 font-bold">
-              <a href="mailto:hello@riziq.com"><Mail /> hello@riziq.com</a>
-            </Button>
+            <div className="mt-5 grid gap-3 text-sm font-semibold">
+              <a className="footer-link inline-flex items-center gap-2" href="tel:+919014314025"><Phone className="size-4" /> +91 90143-14025</a>
+              <a className="footer-link inline-flex items-center gap-2" href="mailto:info@riziq.in"><Mail className="size-4" /> info@riziq.in</a>
+            </div>
+            <Button asChild className="mt-5 font-bold"><Link to="/contact">Send an enquiry <ArrowUpRight /></Link></Button>
           </div>
         </div>
 

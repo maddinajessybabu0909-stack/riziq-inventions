@@ -5,8 +5,8 @@
 - [x] Add shared floating SaaS-style footer
 - [x] Add unique page metadata
 - [x] Verify desktop and mobile navigation, rendering, and page width
-- [ ] Expand About with mission, team, and company timeline
-- [ ] Replace Projects with detailed case studies, imagery, and testimonials
-- [ ] Add service detail pages with pricing and enquiry actions
-- [ ] Update footer contact phone and email
-- [ ] Verify expanded pages across desktop and mobile
+- [x] Expand About with mission and company timeline; hold team profiles for verified details
+- [x] Replace Projects with detailed anonymized case studies, imagery, and testimonials
+- [x] Add service detail pages without pricing and with enquiry actions
+- [x] Update footer contact phone and email
+- [x] Verify expanded pages across desktop and mobile
