@@ -14,3 +14,4 @@
 - [x] Redesign About with circular transparent founder portrait and liquid-fill scroll timeline
 - [x] Refine About education, purpose classroom scene, mission and vision, plus homepage About introduction
 - [x] Strengthen the About opening story and add company LinkedIn and Instagram links
+- [x] Refine About journey links and leadership details; replace em dashes site-wide

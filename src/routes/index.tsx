@@ -93,7 +93,7 @@ function Index() {
               Turning Research into Real-World <span className="text-highlight">Innovation</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-7 text-hero-muted md:text-lg">
-              RIZIQ builds intelligent solutions at the intersection of research, technology and innovation — helping businesses and communities reach new heights.
+              RIZIQ builds intelligent solutions at the intersection of research, technology and innovation - helping businesses and communities reach new heights.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" className="h-12 px-6 font-bold"><Link to="/services">Explore Our Solutions</Link></Button>

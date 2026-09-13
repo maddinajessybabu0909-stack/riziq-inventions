@@ -4,7 +4,7 @@ export const services = [
     title: "Software Development",
     short: "Web, mobile and cloud products built around the way your team and customers actually work.",
     promise: "Turn a defined opportunity into reliable software people can use with confidence.",
-    description: "We design and engineer focused digital products—from internal platforms to customer-facing applications—with usability, security and maintainability considered from the start.",
+    description: "We design and engineer focused digital products - from internal platforms to customer-facing applications - with usability, security and maintainability considered from the start.",
     capabilities: ["Product discovery and technical planning", "Web and mobile application engineering", "Cloud architecture and API integration", "Quality assurance and release support"],
     process: ["Understand the workflow and success criteria", "Prototype the critical experience", "Build in measurable releases", "Launch, learn and improve"],
     outputs: ["Product roadmap", "Experience prototype", "Production-ready application", "Technical documentation"],
