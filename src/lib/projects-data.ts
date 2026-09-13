@@ -16,6 +16,8 @@ export const projects = [
     solution: "The resulting Hexabot concept combines articulated legs, onboard processing, distance and orientation sensors, real-time gait control and an AI-ready perception layer in one modular research platform.",
     capabilities: ["Adaptive multi-leg gait control", "Obstacle and terrain sensing", "Wireless monitoring and commands", "Modular payload and sensor mounting"],
     outcomes: ["A stable platform for robotics and AI experimentation", "Reusable control modules for future autonomous systems", "A practical demonstrator for research, training and field robotics"],
+    testimonial: "The Hexabot turns complex ideas in locomotion, sensing and autonomy into a platform people can observe, test and improve.",
+    attribution: "Project principle, RIZIQ engineering team",
   },
   {
     slug: "ai-smart-classroom",
@@ -29,6 +31,8 @@ export const projects = [
     solution: "The concept integrates a digital board, connected lab devices, classroom sensors and AI-assisted content tools through a single control layer designed for teaching, demonstrations and hands-on project work.",
     capabilities: ["Connected digital board and lesson controls", "Environmental and equipment monitoring", "AI-assisted learning content", "IoT lab kits and project dashboards"],
     outcomes: ["One coordinated view of classroom technology", "More opportunities for practical electronics learning", "A modular foundation that institutions can expand in stages"],
+    testimonial: "Intelligence in a classroom should make teaching clearer and practical learning easier, not add another layer of complexity.",
+    attribution: "Project principle, RIZIQ learning systems team",
   },
   {
     slug: "electric-vehicle-systems",
@@ -42,6 +46,8 @@ export const projects = [
     solution: "The platform brings together battery monitoring, motor drive control, embedded communications and a live diagnostic interface for structured EV research and prototype validation.",
     capabilities: ["Battery monitoring and protection", "Motor controller integration", "CAN-based system communication", "Live diagnostics and fault visibility"],
     outcomes: ["A safer path from subsystem tests to vehicle integration", "Clearer visibility into energy and drivetrain behaviour", "A reusable platform for EV research and student projects"],
+    testimonial: "Every subsystem becomes easier to trust when energy, control and safety can be tested independently before full integration.",
+    attribution: "Project principle, RIZIQ mobility team",
   },
   {
     slug: "autonomous-serving-robot",
@@ -55,6 +61,8 @@ export const projects = [
     solution: "The serving robot concept combines mapped navigation, proximity sensing, a stable multi-tier carrier and a simple task interface for controlled delivery in hospitality, healthcare and institutional spaces.",
     capabilities: ["Autonomous indoor navigation", "Obstacle detection and safe stopping", "Destination-based task control", "Remote status and battery monitoring"],
     outcomes: ["A repeatable platform for indoor delivery trials", "Simple task assignment for non-technical operators", "A modular base for hospitality and institutional use cases"],
+    testimonial: "Useful service robotics begins with safe movement, simple task controls and behaviour that people can understand immediately.",
+    attribution: "Project principle, RIZIQ robotics team",
   },
 ] as const;
 
