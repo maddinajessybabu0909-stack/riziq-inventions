@@ -211,6 +211,26 @@
   .service-teal { color: oklch(0.6 0.14 194); background: oklch(0.93 0.055 192); }
   .stat-icon { display: grid; width: 2.5rem; height: 2.5rem; flex: none; place-items: center; border-radius: 0.4rem; background: oklch(0.93 0.045 245); color: var(--highlight); }
   .content-card { border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); padding: 1.75rem; box-shadow: 0 8px 24px oklch(0.22 0.05 258 / 6%); }
+  .project-tile { overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); box-shadow: 0 10px 30px oklch(0.22 0.05 258 / 7%); transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1), border-color 250ms ease, box-shadow 320ms ease; }
+  .project-tile:hover, .project-tile:focus-within { transform: translateY(-6px); border-color: color-mix(in oklab, var(--primary) 50%, var(--border)); box-shadow: 0 22px 50px oklch(0.22 0.07 258 / 15%); }
+  .project-tile-media { position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: var(--muted); }
+  .project-tile-media img { transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1); }
+  .project-tile:hover .project-tile-media img, .project-tile:focus-within .project-tile-media img { transform: scale(1.045); }
+  .project-index { position: absolute; right: 1rem; top: 1rem; display: grid; width: 2.5rem; height: 2.5rem; place-items: center; border-radius: 999px; background: color-mix(in oklab, var(--card) 92%, transparent); color: var(--foreground); font-size: 0.7rem; font-weight: 800; box-shadow: 0 8px 22px oklch(0.15 0.04 258 / 16%); backdrop-filter: blur(10px); }
+  .project-tile-body { padding: 1.5rem; }
+  .project-tile-link { margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem; color: var(--foreground); font-size: 0.8rem; font-weight: 700; }
+  .project-tile-link svg { color: var(--highlight); transition: transform 250ms ease; }
+  .project-tile:hover .project-tile-link svg, .project-tile:focus-within .project-tile-link svg { transform: translate(3px, -3px); }
+  .project-story-hero { background: linear-gradient(125deg, oklch(0.18 0.1 260), oklch(0.31 0.13 244)); }
+  .project-story-image { aspect-ratio: 3 / 2; min-height: 22rem; overflow: hidden; border-radius: var(--radius) var(--radius) 0 0; box-shadow: 0 24px 60px oklch(0.08 0.04 258 / 34%); }
+  .project-capability { display: flex; align-items: center; gap: 0.75rem; border-bottom: 1px solid var(--border); padding-block: 0.85rem; font-size: 0.875rem; font-weight: 700; line-height: 1.4; }
+  .project-capability svg { flex: none; color: var(--highlight); }
+  .project-story-sections { border-top: 1px solid var(--border); }
+  .project-story-section { display: grid; grid-template-columns: 2.5rem 1fr; gap: 1rem; border-bottom: 1px solid var(--border); padding-block: 2rem; }
+  .project-story-section > span { color: var(--highlight); font-family: var(--font-display); font-size: 0.72rem; font-weight: 800; }
+  .project-outcome { min-height: 11rem; background: var(--card); padding: 1.75rem; }
+  .project-outcome span { color: var(--highlight); font-size: 0.72rem; font-weight: 800; }
+  .project-outcome p { margin-top: 1.5rem; font-family: var(--font-display); font-weight: 700; line-height: 1.5; }
   .form-field { display: grid; gap: 0.5rem; font-size: 0.875rem; font-weight: 700; color: var(--foreground); }
   .form-field input, .form-field textarea, .form-field select { width: 100%; border: 1px solid var(--input); border-radius: var(--radius); background: var(--background); padding: 0.75rem 0.875rem; font-family: var(--font-sans); font-weight: 400; color: var(--foreground); outline: none; }
   .form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px oklch(0.66 0.18 208 / 14%); }
