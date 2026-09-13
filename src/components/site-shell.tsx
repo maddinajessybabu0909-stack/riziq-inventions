@@ -79,10 +79,13 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer className="bg-background px-4 pb-4 pt-12 md:px-6 md:pb-6">
-      <div className="footer-panel mx-auto max-w-6xl overflow-hidden rounded-lg px-6 py-8 text-footer-foreground shadow-footer md:px-10 md:py-10">
+      <div className="footer-panel relative mx-auto max-w-6xl overflow-hidden rounded-lg px-6 py-8 text-footer-foreground shadow-footer md:px-10 md:py-10">
+        <div className="footer-spectrum absolute inset-x-0 top-0 h-1" aria-hidden="true" />
         <div className="grid gap-10 border-b border-footer-border pb-9 lg:grid-cols-[1.35fr_1fr_1fr]">
           <div>
-            <img src={horizontalLogo} alt="RIZIQ" className="footer-logo h-12 w-auto object-contain object-left" />
+            <Link to="/" className="footer-logo-frame inline-flex" aria-label="RIZIQ home">
+              <img src={horizontalLogo} alt="RIZIQ" className="h-11 w-auto object-contain object-left" />
+            </Link>
             <p className="mt-5 max-w-sm text-sm leading-6 text-footer-muted">
               Research-led technology for organizations ready to turn ambitious ideas into useful, scalable products.
             </p>
