@@ -363,7 +363,14 @@
 @media (min-width: 768px) {
   .service-detail-offering-last {
     grid-column: 1 / -1;
-    background: linear-gradient(90deg, color-mix(in oklab, var(--primary) 6%, var(--card)), var(--card));
+    display: flex;
+    justify-content: center;
+    background: var(--card);
+  }
+  .service-detail-offering-inner {
+    width: 100%;
+    max-width: 50%;
+    text-align: left;
   }
 }
 
