@@ -278,11 +278,13 @@
   .partnership-brand { position: relative; display: flex; min-height: 22rem; flex-direction: column; justify-content: center; padding: 2.25rem; }
   .partnership-brand::after { content: ""; position: absolute; inset: auto 2.25rem 0; height: 3px; background: linear-gradient(90deg, var(--partner-orange) 0 30%, var(--partner-blue) 30% 76%, transparent 76%); }
   .partnership-kicker { color: var(--partner-blue); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; }
-  .partnership-logo-wrap { margin-top: 2rem; max-width: 25rem; }
-  .partnership-logo { width: 100%; height: auto; object-fit: contain; object-position: left center; }
-  .partnership-brand-copy { margin-top: 1.6rem; font-family: "Michroma", ui-sans-serif, sans-serif; }
-  .partnership-name { color: var(--hero-foreground); font-size: 0.85rem; }
-  .partnership-tagline { margin-top: 0.45rem; color: var(--partner-blue); font-size: 0.65rem; }
+  .partnership-identity { display: flex; align-items: center; gap: 1.25rem; margin-top: 2.25rem; }
+  .partnership-symbol { width: clamp(5rem, 12vw, 7.5rem); height: auto; flex: none; object-fit: contain; }
+  .partnership-brand-copy { min-width: 0; font-family: "Michroma", ui-sans-serif, sans-serif; }
+  .partnership-name { color: var(--hero-foreground); font-size: clamp(1.15rem, 2.3vw, 1.8rem); white-space: nowrap; }
+  .partnership-name span { color: var(--partner-orange); }
+  .partnership-tagline { margin-top: 0.65rem; color: var(--partner-blue); font-size: clamp(0.5rem, 1vw, 0.72rem); white-space: nowrap; }
+  .partnership-tagline span { color: var(--partner-orange); }
   .partnership-story { border-top: 1px solid color-mix(in oklab, var(--partner-blue) 20%, transparent); background: color-mix(in oklab, var(--partner-blue) 5%, var(--partner-surface)); padding: 2.25rem; color: var(--hero-foreground); }
   .partnership-index { display: block; color: var(--partner-orange); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
   .partnership-story h2 { margin-top: 1.15rem; max-width: 36rem; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; line-height: 1.12; }

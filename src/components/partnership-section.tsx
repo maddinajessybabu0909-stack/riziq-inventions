@@ -1,6 +1,6 @@
 import { ArrowUpRight, CircuitBoard, Code2 } from "lucide-react";
 
-import instructIqLogo from "@/assets/instructiq-lockup.png.asset.json";
+import instructIqSymbol from "@/assets/instructiq-symbol.png.asset.json";
 
 export function PartnershipSection({ compact = false }: { compact?: boolean }) {
   return (
@@ -9,19 +9,19 @@ export function PartnershipSection({ compact = false }: { compact?: boolean }) {
         <div className="partnership-frame">
           <div className="partnership-brand">
             <p className="partnership-kicker">Partnership · Collaboration</p>
-            <div className="partnership-logo-wrap">
+            <div className="partnership-identity">
               <img
-                src={instructIqLogo.url}
-                alt="InstructIQ - Where IQ Meets IT"
-                className="partnership-logo"
-                width={421}
-                height={138}
+                src={instructIqSymbol.url}
+                alt="InstructIQ symbol"
+                className="partnership-symbol"
+                width={500}
+                height={500}
                 loading="lazy"
               />
-            </div>
-            <div className="partnership-brand-copy">
-              <p className="partnership-name">InstructIQ</p>
-              <p className="partnership-tagline">Where IQ Meets IT</p>
+              <div className="partnership-brand-copy">
+                <p className="partnership-name">Instruct<span>IQ</span></p>
+                <p className="partnership-tagline">Where <span>IQ</span> Meets IT</p>
+              </div>
             </div>
           </div>
 
