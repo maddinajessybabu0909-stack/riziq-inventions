@@ -87,7 +87,9 @@ export function SiteFooter() {
               <img src={horizontalLogo} alt="RIZIQ" className="h-11 w-auto object-contain object-left" />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-6 text-footer-muted">
-              Research-led technology for organizations ready to turn ambitious ideas into useful, scalable products.
+              RIZIQ Inventions
+              <br />
+              Beyond Ideas - Into Innovation
             </p>
             <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-footer-border px-3 py-1.5 text-xs font-semibold text-footer-muted">
               <span className="status-dot size-2 animate-pulse rounded-full" /> All systems Operational
