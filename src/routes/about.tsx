@@ -91,7 +91,7 @@ function AboutPage() {
           <div className="founder-orbit mx-auto">
             <div className="founder-orbit-ring founder-orbit-ring-outer" aria-hidden="true" />
             <div className="founder-orbit-ring founder-orbit-ring-inner" aria-hidden="true" />
-            <div className="founder-portrait"><img src={jessyPortrait} alt="Jessy Yadav Maddina, Founder and CEO of RIZIQ" /></div>
+            <div className="founder-portrait"><img src={jessyPortrait} alt="Jessy Yadav Maddina, Founder and CEO of RIZIQ" width={836} height={1078} loading="lazy" decoding="async" /></div>
           </div>
           <div className="text-center md:text-left">
             <p className="about-kicker">Leadership</p>
