@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useRef } from "react";
 import { ArrowRight, Compass, FlaskConical, Gauge, Lightbulb, Target, ThumbsUp, Users } from "lucide-react";
 
 import partnerImage from "@/assets/riziq-partner-natural.jpg";
-import jessyPortrait from "@/assets/jessy-yadav-maddina.png.asset.json";
-import { PageIntro } from "@/components/site-shell";
+import jessyPortrait from "@/assets/jessy-yadav-transparent.png";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/about")({
@@ -32,20 +32,71 @@ const timeline = [
 ];
 
 function AboutPage() {
+  const timelineRef = useRef<HTMLOListElement>(null);
+
+  useEffect(() => {
+    const timelineElement = timelineRef.current;
+    if (!timelineElement) return;
+
+    const updateProgress = () => {
+      const bounds = timelineElement.getBoundingClientRect();
+      const start = window.innerHeight * 0.72;
+      const distance = Math.max(bounds.height, 1);
+      const progress = Math.min(1, Math.max(0, (start - bounds.top) / distance));
+      timelineElement.style.setProperty("--timeline-progress", progress.toString());
+    };
+
+    updateProgress();
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+    return () => {
+      window.removeEventListener("scroll", updateProgress);
+      window.removeEventListener("resize", updateProgress);
+    };
+  }, []);
+
   return <main className="min-h-screen bg-background">
-    <PageIntro eyebrow="About RIZIQ" title="Ideas become valuable when they work in the real world." description="RIZIQ brings research, product thinking and engineering together to solve meaningful operational and community challenges." />
-    <section className="py-20 md:py-24"><div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2 md:px-8">
-      <div className="overflow-hidden rounded-lg shadow-media"><img src={partnerImage} alt="Engineers collaborating on an intelligent sensor prototype" className="aspect-[8/6] h-full w-full object-cover" /></div>
-      <div><p className="section-kicker">Our purpose</p><h2 className="mt-3 text-3xl font-bold">A bridge between possibility and practical impact.</h2><p className="mt-5 leading-7 text-muted-foreground">We help teams move from an early question to a tested, usable solution. That means connecting disciplines, challenging assumptions and building with the full operating environment in mind.</p><Button asChild className="mt-7 font-bold"><Link to="/contact">Work with us <ArrowRight /></Link></Button></div>
-    </div></section>
-    <section className="bg-cta py-20 text-hero-foreground"><div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[0.65fr_1.35fr] md:px-8"><div><div className="grid size-12 place-items-center rounded-md border border-hero-border bg-hero-soft"><Target /></div><p className="mt-6 text-xs font-bold uppercase tracking-[0.24em] text-hero-muted">Our mission</p></div><div><h2 className="max-w-3xl text-3xl font-bold leading-tight md:text-5xl">Make advanced technology useful, responsible and reachable.</h2><p className="mt-6 max-w-2xl leading-7 text-hero-muted">We exist to close the distance between a promising idea and meaningful adoption—building with the people, conditions and outcomes that define success.</p></div></div></section>
-    <section className="py-20 md:py-24"><div className="mx-auto max-w-6xl px-6 md:px-8"><div className="grid gap-10 md:grid-cols-[0.72fr_1.28fr]"><div><p className="section-kicker">Our journey</p><h2 className="mt-3 text-3xl font-bold">Built one useful step at a time.</h2><p className="mt-5 leading-7 text-muted-foreground">Our story is not about chasing technology trends. It is about learning where technology can remove friction, expand possibility and earn trust.</p></div><ol className="timeline-list">{timeline.map((item) => <li key={item.title} className="timeline-item"><p className="section-kicker">{item.year}</p><h3 className="mt-2 text-xl font-bold">{item.title}</h3><p className="mt-3 text-sm leading-6 text-muted-foreground">{item.text}</p></li>)}</ol></div></div></section>
-    <section className="bg-section py-20"><div className="mx-auto max-w-6xl px-6 md:px-8"><p className="section-kicker">How we work</p><h2 className="mt-3 text-3xl font-bold">Curious by nature. Rigorous by design.</h2><div className="mt-10 grid gap-5 md:grid-cols-3">{principles.map(({icon: Icon, title, text}) => <article key={title} className="content-card"><div className="stat-icon"><Icon /></div><h3 className="mt-5 text-lg font-bold">{title}</h3><p className="mt-3 text-sm leading-6 text-muted-foreground">{text}</p></article>)}</div>
-      <div className="mt-12 grid grid-cols-3 gap-4 border-t border-border pt-8">{[{value:"500+",label:"Projects delivered",icon:Lightbulb},{value:"50+",label:"Happy clients",icon:ThumbsUp},{value:"5+",label:"Years of experience",icon:Users}].map(({value,label,icon:Icon}) => <div key={label} className="text-center"><Icon className="mx-auto size-5 text-highlight"/><strong className="mt-2 block text-2xl">{value}</strong><span className="text-xs text-muted-foreground">{label}</span></div>)}</div>
-      <div className="mt-14 grid items-center gap-8 border-t border-border pt-12 md:grid-cols-[0.8fr_1.2fr] md:gap-14">
-        <div className="overflow-hidden rounded-lg bg-muted shadow-media"><img src={jessyPortrait.url} alt="Jessy Yadav Maddina, Founder and CEO of RIZIQ" className="aspect-[4/5] h-full w-full object-cover object-top" /></div>
-        <div><p className="section-kicker">Leadership</p><h2 className="mt-3 text-3xl font-bold">Jessy Yadav Maddina, M.Tech</h2><p className="mt-2 text-lg font-semibold text-highlight">Founder &amp; CEO</p><div className="mt-7 flex items-center gap-4 border-y border-border py-5"><div className="stat-icon"><Users className="size-5" /></div><div><strong className="block text-xl">5+ Years</strong><span className="text-sm text-muted-foreground">Experience</span></div></div><Button asChild variant="outline" className="mt-7"><Link to="/contact">Talk to Jessy <ArrowRight /></Link></Button></div>
+    <section className="about-editorial overflow-hidden pb-24 pt-36 text-hero-foreground md:pb-32 md:pt-44">
+      <div className="mx-auto max-w-6xl px-6 md:px-8">
+        <header className="text-center">
+          <p className="about-kicker">Our genesis</p>
+          <h1 className="mx-auto mt-6 max-w-5xl text-5xl font-bold leading-[0.95] md:text-8xl">The story behind <span className="text-primary">RIZIQ.</span></h1>
+          <p className="mx-auto mt-7 max-w-2xl text-base leading-7 text-hero-muted md:text-lg">Ideas become valuable when they work in the real world. We bring research, product thinking and engineering together to solve meaningful challenges.</p>
+        </header>
+
+        <div className="mt-20 grid items-center gap-14 md:grid-cols-[0.9fr_1.1fr] md:gap-20">
+          <div className="founder-orbit mx-auto">
+            <div className="founder-orbit-ring founder-orbit-ring-outer" aria-hidden="true" />
+            <div className="founder-orbit-ring founder-orbit-ring-inner" aria-hidden="true" />
+            <div className="founder-portrait"><img src={jessyPortrait} alt="Jessy Yadav Maddina, Founder and CEO of RIZIQ" /></div>
+          </div>
+          <div className="text-center md:text-left">
+            <p className="about-kicker">Leadership</p>
+            <h2 className="mt-4 text-3xl font-bold md:text-5xl">Jessy Yadav Maddina, M.Tech</h2>
+            <p className="mt-3 text-xl font-semibold text-primary">Founder &amp; CEO</p>
+            <div className="mx-auto mt-7 flex w-fit items-center gap-4 border-y border-hero-border py-5 md:mx-0"><div className="grid size-11 place-items-center rounded-md bg-hero-soft text-primary"><Users className="size-5" /></div><div className="text-left"><strong className="block text-xl">5+ Years</strong><span className="text-sm text-hero-muted">Experience</span></div></div>
+            <Button asChild className="mt-8 font-bold"><Link to="/contact">Talk to Jessy <ArrowRight /></Link></Button>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <section className="py-20 md:py-28"><div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-[1.08fr_0.92fr] md:px-8">
+      <div className="overflow-hidden rounded-lg shadow-media"><img src={partnerImage} alt="Engineers collaborating on an intelligent sensor prototype" className="aspect-[8/6] h-full w-full object-cover" /></div>
+      <div><p className="section-kicker">Our purpose</p><h2 className="mt-3 text-3xl font-bold md:text-4xl">A bridge between possibility and practical impact.</h2><p className="mt-5 leading-7 text-muted-foreground">We help teams move from an early question to a tested, usable solution. That means connecting disciplines, challenging assumptions and building with the full operating environment in mind.</p><Button asChild className="mt-7 font-bold"><Link to="/contact">Work with us <ArrowRight /></Link></Button></div>
+    </div></section>
+
+    <section className="bg-cta py-20 text-hero-foreground"><div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[0.65fr_1.35fr] md:px-8"><div><div className="grid size-12 place-items-center rounded-md border border-hero-border bg-hero-soft"><Target /></div><p className="mt-6 text-xs font-bold uppercase tracking-[0.24em] text-hero-muted">Our mission</p></div><div><h2 className="max-w-3xl text-3xl font-bold leading-tight md:text-5xl">Make advanced technology useful, responsible and reachable.</h2><p className="mt-6 max-w-2xl leading-7 text-hero-muted">We exist to close the distance between a promising idea and meaningful adoption—building with the people, conditions and outcomes that define success.</p></div></div></section>
+
+    <section className="about-journey py-24 text-hero-foreground md:py-32"><div className="mx-auto max-w-5xl px-6 md:px-8">
+      <div className="max-w-2xl"><p className="about-kicker">Our journey</p><h2 className="mt-4 text-4xl font-bold md:text-6xl">Built one useful step at a time.</h2><p className="mt-6 text-lg leading-8 text-hero-muted">Our story is not about chasing technology trends. It is about learning where technology can remove friction, expand possibility and earn trust.</p></div>
+      <ol ref={timelineRef} className="liquid-timeline mt-20">
+        {timeline.map((item, index) => <li key={item.title} className="liquid-timeline-item"><span className="liquid-node" aria-hidden="true"><span /></span><div className="liquid-index">0{index + 1}</div><article><p className="about-kicker">{item.year}</p><h3 className="mt-4 text-2xl font-bold md:text-4xl">{item.title}</h3><p className="mt-4 max-w-xl leading-7 text-hero-muted">{item.text}</p></article></li>)}
+      </ol>
+    </div></section>
+
+    <section className="bg-section py-20 md:py-28"><div className="mx-auto max-w-6xl px-6 md:px-8"><div className="grid gap-8 md:grid-cols-[0.7fr_1.3fr]"><div><p className="section-kicker">How we work</p><h2 className="mt-3 text-3xl font-bold md:text-4xl">Curious by nature. Rigorous by design.</h2></div><div className="grid gap-5 md:grid-cols-3">{principles.map(({icon: Icon, title, text}) => <article key={title} className="content-card"><div className="stat-icon"><Icon /></div><h3 className="mt-5 text-lg font-bold">{title}</h3><p className="mt-3 text-sm leading-6 text-muted-foreground">{text}</p></article>)}</div></div>
+      <div className="mt-14 grid grid-cols-3 gap-4 border-t border-border pt-9">{[{value:"500+",label:"Projects delivered",icon:Lightbulb},{value:"50+",label:"Happy clients",icon:ThumbsUp},{value:"5+",label:"Years of experience",icon:Users}].map(({value,label,icon:Icon}) => <div key={label} className="text-center"><Icon className="mx-auto size-5 text-highlight"/><strong className="mt-2 block text-2xl">{value}</strong><span className="text-xs text-muted-foreground">{label}</span></div>)}</div>
     </div></section>
   </main>;
 }
