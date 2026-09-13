@@ -16,7 +16,7 @@ const galleryImages = [
   { src: labTrainingImage.url, alt: "Students attending a technology training session in a computer lab", caption: "Practical technology training" },
   { src: boardSessionImage.url, alt: "RIZIQ instructor explaining embedded systems at a classroom board", caption: "Engineering concepts made clear" },
   { src: labWideImage.url, alt: "Students learning together in a computer laboratory", caption: "Hands-on learning environments" },
-  { src: recognitionImage.url, alt: "RIZIQ founder receiving recognition at an institution", caption: "Recognition and relationships" },
+  { src: recognitionImage.url, alt: "RIZIQ founder receiving recognition at an institution", caption: "Honored for the great work", position: "center 22%" },
   { src: collaborationImage.url, alt: "RIZIQ representatives presenting a collaboration document", caption: "Institutional collaboration" },
   { src: conferenceImage.url, alt: "RIZIQ founder with educators and industry representatives at a conference", caption: "Ideas shared across communities" },
   { src: agreementImage.url, alt: "RIZIQ representatives marking an institutional agreement", caption: "Partnerships built for impact" },
@@ -104,7 +104,7 @@ export function AboutGalleryCarousel() {
             >
               {page.map((image) => (
                 <figure key={image.src} className="about-gallery-card">
-                  <img src={image.src} alt={image.alt} width={1024} height={768} loading="lazy" />
+                  <img src={image.src} alt={image.alt} width={1024} height={768} loading="lazy" style={{ objectPosition: image.position }} />
                   <figcaption>{image.caption}</figcaption>
                 </figure>
               ))}
