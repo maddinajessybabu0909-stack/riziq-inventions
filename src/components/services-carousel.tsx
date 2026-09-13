@@ -86,14 +86,19 @@ export function ServicesCarousel() {
     setProgressCycle((current) => current + 1);
   };
 
+  const resume = () => {
+    setPaused(false);
+    setProgressCycle((current) => current + 1);
+  };
+
   return (
     <div
       className="services-carousel mt-10"
       onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      onMouseLeave={resume}
       onFocusCapture={() => setPaused(true)}
       onBlurCapture={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) setPaused(false);
+        if (!event.currentTarget.contains(event.relatedTarget)) resume();
       }}
       aria-roledescription="carousel"
       aria-label="RIZIQ services"
