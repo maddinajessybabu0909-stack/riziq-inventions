@@ -78,8 +78,6 @@ function Index() {
         </div>
       </section>
 
-      <PartnershipSection compact />
-
       <section id="projects" className="bg-cta py-10 text-hero-foreground">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-6 sm:flex-row sm:items-center md:px-8">
           <div><h2 className="text-xl font-extrabold">Let’s Build Something Amazing Together</h2><p className="mt-1 text-sm text-hero-muted">Partner with us for your next research or development project.</p></div>
