@@ -3,11 +3,13 @@ import { ArrowRight, CheckCircle2, Instagram, Linkedin, Mail, MessageSquareText,
 import { useState, type FormEvent } from "react";
 import { z } from "zod";
 
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { PageIntro } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { getService, services } from "@/lib/services-data";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mjyvqoqb";
+const WHATSAPP_LINK = "https://api.whatsapp.com/send?phone=919014314025&text=hi%2C%20I%20need%20to%20discuss%20something%20with%20you%20regarding%20the%20company";
 
 export const Route = createFileRoute("/contact")({
   validateSearch: (search) => z.object({ service: z.string().optional() }).parse(search),

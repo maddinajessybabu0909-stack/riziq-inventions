@@ -111,7 +111,9 @@ function AboutPage() {
               </div>
             </div>
             <Button asChild className="mt-8 font-bold">
-              <Link to="/contact">Talk to Jessy <ArrowRight /></Link>
+              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" aria-label="Chat with Jessy on WhatsApp">
+                <WhatsAppIcon className="size-4" /> Talk to Jessy on WhatsApp
+              </a>
             </Button>
           </div>
         </div>
