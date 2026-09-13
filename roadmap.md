@@ -23,3 +23,4 @@
 - [x] Add a uniform 3.5-second auto-scrolling homepage services carousel
 - [x] Synchronize the service carousel dots with an animated 3.5-second timeline
 - [x] Restyle /services overview with Dynamic Engineering Schematics direction (dark hero, accent-bar cards, centered last card)
+- [x] Restyle individual service pages with bright backgrounds and domain-specific engineering accents

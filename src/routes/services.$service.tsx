@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowRight, Check, Mail, MessageSquare, Phone } from "lucide-react";
+import { ArrowRight, Check, Mail, MessageSquare, Phone, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { getService, services } from "@/lib/services-data";
@@ -26,15 +26,30 @@ export const Route = createFileRoute("/services/$service")({
 function ServiceDetail() {
   const service = Route.useLoaderData();
   const others = services.filter((item) => item.slug !== service.slug).slice(0, 3);
+  const serviceIndex = services.findIndex((item) => item.slug === service.slug);
+  const tone = ["detail-blue", "detail-violet", "detail-teal", "detail-amber"][Math.max(0, serviceIndex) % 4];
 
   return (
-    <main className="min-h-screen bg-background">
-      <section className="page-intro pt-32 text-hero-foreground md:pt-40">
-        <div className="mx-auto max-w-6xl px-6 pb-16 md:px-8 md:pb-20">
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-hero-muted">RIZIQ service</p>
-          <h1 className="mt-4 max-w-4xl text-4xl font-bold leading-tight md:text-6xl">{service.title}</h1>
-          <p className="mt-6 max-w-2xl text-lg leading-7 text-hero-muted">{service.promise}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
+    <main className={`service-detail min-h-screen bg-background ${tone}`}>
+      <section className="service-detail-hero pt-32 md:pt-40">
+        <div className="mx-auto max-w-6xl px-6 pb-14 md:px-8 md:pb-20">
+          <div className="service-detail-domain">
+            <span>{String(serviceIndex + 1).padStart(2, "0")}</span>
+            <span>RIZIQ service domain</span>
+          </div>
+          <div className="mt-8 grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
+            <div>
+              <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">{service.title}</h1>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">{service.promise}</p>
+            </div>
+            <div className="service-detail-focus">
+              <p className="text-xs font-bold uppercase tracking-[0.18em]">Core focus</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {service.tech.slice(0, 4).map((item) => <span key={item}>{item}</span>)}
+              </div>
+            </div>
+          </div>
+          <div className="mt-10 flex flex-wrap gap-3">
             <Button asChild size="lg">
               <Link to="/contact" search={{ service: service.slug }}>
                 Enquire about this service <ArrowRight />
@@ -44,7 +59,7 @@ function ServiceDetail() {
               asChild
               size="lg"
               variant="outline"
-              className="border-hero-border bg-hero-soft text-hero-foreground hover:bg-hero-soft hover:text-hero-foreground"
+              className="bg-card"
             >
               <a href="tel:+919014314025">
                 <Phone /> +91 90143-14025
@@ -54,38 +69,41 @@ function ServiceDetail() {
         </div>
       </section>
 
-      <section className="py-20 md:py-24">
+      <section className="py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-6 md:px-8">
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <p className="section-kicker">What we deliver</p>
-              <h2 className="mt-3 text-3xl font-bold">Built for the full operating context.</h2>
+              <h2 className="mt-3 text-3xl font-bold md:text-4xl">Built for the full operating context.</h2>
               <p className="mt-5 text-lg leading-8 text-muted-foreground">{service.description}</p>
-              <div className="mt-8 rounded-lg bg-section p-6">
+              <div className="service-detail-fit mt-8">
                 <p className="text-sm font-bold">A strong fit for</p>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">{service.fit}</p>
               </div>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {service.capabilities.map((capability) => (
-                <div key={capability} className="content-card flex min-h-28 items-start gap-3">
-                  <span className="stat-icon size-8">
-                    <Check className="size-4" />
-                  </span>
-                  <p className="text-sm font-semibold leading-6">{capability}</p>
+            <div className="service-detail-capabilities">
+              {service.capabilities.map((capability, index) => (
+                <div key={capability} className="service-detail-capability">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <div>
+                    <Check className="size-5" />
+                    <p className="mt-5 font-semibold leading-6">{capability}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="mt-20 border-t border-border pt-16">
-            <p className="section-kicker">What this service includes</p>
-            <h2 className="mt-3 max-w-2xl text-3xl font-bold">The work, in plain terms.</h2>
-            <div className="mt-9 grid gap-4 md:grid-cols-2">
+          <div className="service-detail-band mt-20">
+            <div>
+              <p className="section-kicker">What this service includes</p>
+              <h2 className="mt-3 max-w-2xl text-3xl font-bold md:text-4xl">The work, in plain terms.</h2>
+            </div>
+            <div className="mt-10 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-2">
               {service.offerings.map((offering, index) => (
-                <article key={offering.title} className="content-card">
+                <article key={offering.title} className="service-detail-offering">
                   <div className="flex items-baseline gap-3">
-                    <span className="text-sm font-bold text-highlight">0{index + 1}</span>
+                    <span className="service-detail-number">0{index + 1}</span>
                     <h3 className="text-lg font-semibold leading-6">{offering.title}</h3>
                   </div>
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">{offering.detail}</p>
@@ -100,8 +118,8 @@ function ServiceDetail() {
               <h2 className="mt-3 text-3xl font-bold">A clear path from question to outcome.</h2>
               <ol className="mt-9 grid gap-4 sm:grid-cols-2">
                 {service.process.map((step, index) => (
-                  <li key={step} className="content-card">
-                    <span className="text-sm font-bold text-highlight">0{index + 1}</span>
+                  <li key={step} className="service-detail-process">
+                    <span className="service-detail-number">0{index + 1}</span>
                     <p className="mt-4 font-semibold leading-6">{step}</p>
                   </li>
                 ))}
@@ -112,7 +130,7 @@ function ServiceDetail() {
               <ul className="mt-6 space-y-4">
                 {service.outputs.map((output) => (
                   <li key={output} className="flex items-center gap-3 border-b border-border pb-4 text-sm font-semibold">
-                    <Check className="size-4 text-highlight" />
+                    <Check className="service-detail-accent size-4" />
                     {output}
                   </li>
                 ))}
@@ -120,7 +138,7 @@ function ServiceDetail() {
               <p className="section-kicker mt-10">Tools and standards</p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {service.tech.map((item) => (
-                  <span key={item} className="rounded-full bg-section px-3 py-1.5 text-xs font-semibold text-muted-foreground">
+                    <span key={item} className="service-detail-chip">
                     {item}
                   </span>
                 ))}
@@ -138,7 +156,7 @@ function ServiceDetail() {
             </div>
             <div className="space-y-4">
               {service.faqs.map((faq) => (
-                <details key={faq.q} className="content-card group">
+                <details key={faq.q} className="service-detail-faq group">
                   <summary className="cursor-pointer list-none text-base font-semibold leading-6 marker:hidden">
                     {faq.q}
                   </summary>
@@ -157,17 +175,17 @@ function ServiceDetail() {
                   key={item.slug}
                   to="/services/$service"
                   params={{ service: item.slug }}
-                  className="content-card group block transition-transform hover:-translate-y-1"
+                  className="service-detail-related group block"
                 >
                   <h3 className="text-lg font-semibold">{item.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">{item.short}</p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-highlight">
+                  <span className="service-detail-accent mt-5 inline-flex items-center gap-2 text-sm font-semibold">
                     View service <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                   </span>
                 </Link>
               ))}
             </div>
-            <Link to="/services" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-highlight">
+            <Link to="/services" className="service-detail-accent mt-8 inline-flex items-center gap-2 text-sm font-semibold">
               See all services <ArrowRight className="size-4" />
             </Link>
           </div>
@@ -209,7 +227,7 @@ function ServiceDetail() {
                 <p className="mt-1 font-semibold">info@riziq.in</p>
               </a>
               <div className="rounded-lg border border-hero-border bg-hero-soft p-5 sm:col-span-2">
-                <MessageSquare className="size-5" />
+                <Sparkles className="size-5" />
                 <p className="mt-4 text-xs font-bold uppercase tracking-[0.18em] text-hero-muted">Response time</p>
                 <p className="mt-1 text-sm text-hero-muted">
                   We usually reply within one working day and follow up with a short discovery call.

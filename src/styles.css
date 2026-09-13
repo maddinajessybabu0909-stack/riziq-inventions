@@ -238,6 +238,29 @@
   .schematic-violet { --schematic: var(--schematic-violet); }
   .schematic-teal { --schematic: var(--schematic-teal); }
   .schematic-amber { --schematic: var(--schematic-amber); }
+  .service-detail { --detail-accent: var(--schematic-blue); --detail-soft: color-mix(in oklab, var(--detail-accent) 8%, var(--background)); }
+  .service-detail.detail-violet { --detail-accent: var(--schematic-violet); }
+  .service-detail.detail-teal { --detail-accent: var(--schematic-teal); }
+  .service-detail.detail-amber { --detail-accent: var(--schematic-amber); }
+  .service-detail-hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--border); background-color: var(--background); background-image: linear-gradient(color-mix(in oklab, var(--detail-accent) 8%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in oklab, var(--detail-accent) 8%, transparent) 1px, transparent 1px); background-size: 3.5rem 3.5rem; }
+  .service-detail-hero::after { content: ""; position: absolute; inset: auto 0 0; height: 4px; background: linear-gradient(90deg, var(--detail-accent) 0 34%, transparent 34%); }
+  .service-detail-domain { display: flex; align-items: center; gap: 0.75rem; color: var(--detail-accent); font-family: var(--font-display); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+  .service-detail-domain span:first-child { display: grid; width: 2.4rem; height: 2.4rem; place-items: center; border: 1px solid color-mix(in oklab, var(--detail-accent) 35%, var(--border)); border-radius: 999px; background: var(--card); letter-spacing: 0; }
+  .service-detail-focus { border-left: 3px solid var(--detail-accent); background: color-mix(in oklab, var(--card) 88%, transparent); padding: 1.25rem 1.4rem; box-shadow: 0 12px 32px oklch(0.22 0.05 258 / 7%); backdrop-filter: blur(8px); }
+  .service-detail-focus > p { color: var(--detail-accent); }
+  .service-detail-focus span, .service-detail-chip { display: inline-flex; border: 1px solid color-mix(in oklab, var(--detail-accent) 25%, var(--border)); border-radius: 999px; background: var(--detail-soft); padding: 0.4rem 0.7rem; color: var(--foreground); font-size: 0.72rem; font-weight: 700; }
+  .service-detail-fit { border-left: 3px solid var(--detail-accent); background: var(--detail-soft); padding: 1.4rem; }
+  .service-detail-capabilities { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
+  .service-detail-capability { display: grid; min-height: 11rem; grid-template-columns: 2rem 1fr; gap: 0.8rem; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--card); padding: 1.4rem; }
+  .service-detail-capability > span, .service-detail-number { color: var(--detail-accent); font-size: 0.7rem; font-weight: 800; }
+  .service-detail-capability svg { color: var(--detail-accent); }
+  .service-detail-band { padding-block: 4rem; }
+  .service-detail-offering { min-height: 10rem; background: var(--card); padding: 1.6rem; }
+  .service-detail-process { min-height: 9rem; border-top: 3px solid var(--detail-accent); background: var(--detail-soft); padding: 1.5rem; }
+  .service-detail-accent { color: var(--detail-accent); }
+  .service-detail-faq { border: 1px solid var(--border); border-left: 3px solid var(--detail-accent); background: var(--card); padding: 1.5rem; }
+  .service-detail-related { height: 100%; border: 1px solid var(--border); border-top: 3px solid var(--detail-accent); background: var(--card); padding: 1.6rem; box-shadow: 0 8px 24px oklch(0.22 0.05 258 / 6%); transition: transform 250ms ease, box-shadow 250ms ease; }
+  .service-detail-related:hover, .service-detail-related:focus-visible { transform: translateY(-4px); box-shadow: 0 16px 34px oklch(0.22 0.06 258 / 12%); outline: none; }
   .stat-icon { display: grid; width: 2.5rem; height: 2.5rem; flex: none; place-items: center; border-radius: 0.4rem; background: oklch(0.93 0.045 245); color: var(--highlight); }
   .content-card { border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); padding: 1.75rem; box-shadow: 0 8px 24px oklch(0.22 0.05 258 / 6%); }
   .project-showcase-list { display: grid; gap: 5rem; }
@@ -332,6 +355,7 @@
   .services-carousel-dot-control { width: 1.25rem; }
   .services-carousel-dot { width: 0.4rem; height: 0.4rem; }
   .services-carousel-dot.active { width: 1.75rem; }
+  .service-detail-capabilities { grid-template-columns: 1fr; }
 }
 
 @keyframes services-progress {
