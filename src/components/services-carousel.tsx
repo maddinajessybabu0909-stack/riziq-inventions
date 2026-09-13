@@ -114,11 +114,11 @@ export function ServicesCarousel() {
         </div>
       </div>
 
-      <div className="mt-6 flex items-center justify-center gap-4">
+      <div className="mt-6 flex items-center justify-center gap-2 sm:gap-4">
         <Button type="button" variant="outline" size="icon" onClick={() => move(-1)} aria-label="Previous services">
           <ArrowLeft />
         </Button>
-        <div className="flex items-center gap-2" aria-label={`Service group ${activePage + 1} of ${pages.length}`}>
+        <div className="flex items-center gap-1 sm:gap-2" aria-label={`Service group ${activePage + 1} of ${pages.length}`}>
           {pages.map((page, index) => (
             <Button
               key={page.map((service) => service.slug).join("-")}

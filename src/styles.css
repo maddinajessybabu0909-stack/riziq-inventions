@@ -209,7 +209,7 @@
   .services-carousel-track { display: flex; transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1); }
   .services-carousel-page { display: grid; width: 100%; min-width: 100%; gap: 1rem; align-items: stretch; }
   .services-carousel-page .service-card { height: 100%; }
-  .services-carousel-dot-control { width: 1.5rem; height: 1.5rem; padding: 0; }
+  .services-carousel-dot-control { width: 1rem; height: 1.5rem; padding: 0; }
   .services-carousel-dot { display: block; width: 0.5rem; height: 0.5rem; border-radius: 999px; background: var(--border); transition: width 220ms ease, background-color 220ms ease; }
   .services-carousel-dot.active { width: 1.25rem; background: var(--primary); }
   .service-icon { margin-inline: auto; display: grid; width: 3.25rem; height: 3.25rem; place-items: center; border-radius: 999px; }
@@ -307,6 +307,8 @@
   .project-showcase, .project-showcase:nth-child(even) { grid-template-columns: 1fr; gap: 1.75rem; }
   .project-showcase:nth-child(even) .project-showcase-media { order: 0; }
   .project-showcase-content { padding-block: 0; }
+  .services-carousel-dot { width: 0.4rem; height: 0.4rem; }
+  .services-carousel-dot.active { width: 0.8rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
