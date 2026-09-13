@@ -32,7 +32,7 @@ const timeline = [
 ];
 
 const journeySteps = [
-  { title: "Learn", text: "Build clear foundations", to: "/services/training-workshops" as const },
+  { title: "Learn", text: "Build clear foundations", to: "/services" as const },
   { title: "Experiment", text: "Test ideas in practice", to: "/projects" as const },
   { title: "Engineer", text: "Turn insight into systems", to: "/services" as const },
   { title: "Create impact", text: "Start a meaningful project", to: "/contact" as const },
