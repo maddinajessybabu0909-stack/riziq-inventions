@@ -5,7 +5,7 @@ import { PageIntro } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/lib/projects-data";
 
-export const Route = createFileRoute("/projects")({
+export const Route = createFileRoute("/projects/")({
   head: () => ({ meta: [
     { title: "Technology Case Studies | RIZIQ" },
     { name: "description", content: "Explore anonymized RIZIQ case studies across connected agriculture, manufacturing insight and healthcare operations." },
