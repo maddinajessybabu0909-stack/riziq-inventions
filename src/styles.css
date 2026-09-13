@@ -398,8 +398,9 @@
 
 @media (min-width: 768px) {
   .partnership-frame { grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr); }
-  .partnership-brand { min-height: 31rem; padding: 3.25rem; }
-  .partnership-story { display: flex; flex-direction: column; justify-content: center; border-top: 0; border-left: 1px solid color-mix(in oklab, var(--partner-blue) 20%, transparent); padding: 3.25rem; }
+  .partnership-brand { min-height: 26rem; padding: 2.25rem; }
+  .partnership-brand::after { inset-inline: 2.25rem; }
+  .partnership-story { display: flex; flex-direction: column; justify-content: center; border-top: 0; border-left: 1px solid color-mix(in oklab, var(--partner-blue) 20%, transparent); padding: 2.25rem; }
   .partnership-bridge { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
   .partnership-bridge-arrow { display: block; color: var(--partner-blue); transform: rotate(45deg); }
   .service-detail-offering-last {
