@@ -14,8 +14,8 @@ import {
   Users,
 } from "lucide-react";
 import horizontalLogo from "@/assets/riziq-logo-horizontal.png";
-import heroImage from "@/assets/riziq-hero.jpg";
-import partnerImage from "@/assets/riziq-partner.jpg";
+import heroImage from "@/assets/riziq-hero-natural.jpg";
+import partnerImage from "@/assets/riziq-partner-natural.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -106,7 +106,7 @@ function Index() {
       </header>
 
       <section id="home" className="relative flex min-h-[720px] items-center bg-hero pt-24 text-hero-foreground md:min-h-[760px]">
-        <img src={heroImage} alt="Holographic artificial intelligence brain above a laptop" className="absolute inset-0 h-full w-full object-cover object-center" width={1536} height={864} />
+        <img src={heroImage} alt="Engineers developing a robotics prototype in a technology studio" className="absolute inset-0 h-full w-full object-cover object-center" width={1536} height={864} />
         <div className="absolute inset-0 bg-hero-overlay" />
         <div className="relative mx-auto w-full max-w-6xl px-6 py-24 md:px-8">
           <div className="max-w-2xl">
@@ -150,7 +150,7 @@ function Index() {
       <section id="about" className="bg-section py-20 md:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-[1.05fr_1fr] md:px-8">
           <div className="relative overflow-hidden rounded-lg shadow-media">
-            <img src={partnerImage} alt="Digital technology network held in a person's hand" className="aspect-[8/5] h-full w-full object-cover" width={1024} height={640} loading="lazy" />
+            <img src={partnerImage} alt="Engineers assembling an intelligent sensor prototype" className="aspect-[8/5] h-full w-full object-cover" width={1280} height={800} loading="lazy" />
             <div className="absolute inset-0 ring-1 ring-inset ring-border/30" />
           </div>
           <div>
