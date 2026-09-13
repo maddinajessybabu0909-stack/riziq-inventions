@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef } from "react";
 import { ArrowRight, Compass, Eye, FlaskConical, Gauge, GraduationCap, Lightbulb, Target, ThumbsUp, Users } from "lucide-react";
 
-import classroomImage from "@/assets/riziq-digital-classroom.jpg";
+import classroomImage from "@/assets/riziq-digital-classroom.png";
 import jessyPortrait from "@/assets/jessy-yadav-transparent.png";
 import { Button } from "@/components/ui/button";
 
