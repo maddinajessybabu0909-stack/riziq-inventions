@@ -32,7 +32,7 @@ function Index() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-background">
       <section id="home" className="relative flex min-h-[720px] items-center bg-hero pt-24 text-hero-foreground md:min-h-[760px]">
-        <img src={heroImage} alt="Engineers developing a robotics prototype in a technology studio" className="absolute inset-0 h-full w-full object-cover object-center" width={1536} height={864} />
+        <img src={heroImage} alt="Engineers developing a robotics prototype in a technology studio" className="absolute inset-0 h-full w-full object-cover object-center" width={1536} height={864} fetchPriority="high" decoding="async" />
         <div className="absolute inset-0 bg-hero-overlay" />
         <div className="relative mx-auto w-full max-w-6xl px-6 py-24 md:px-8">
           <div className="max-w-2xl">
