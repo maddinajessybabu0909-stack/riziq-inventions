@@ -15,3 +15,4 @@
 - [x] Refine About education, purpose classroom scene, mission and vision, plus homepage About introduction
 - [x] Strengthen the About opening story and add company LinkedIn and Instagram links
 - [x] Refine About journey links and leadership details; replace em dashes site-wide
+- [x] Refocus Projects on AI Hexabot, smart classrooms, EV systems, and serving robots
