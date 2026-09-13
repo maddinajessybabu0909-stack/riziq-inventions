@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Mail, MessageSquareText, Phone } from "lucide-react";
+import { ArrowRight, Instagram, Linkedin, Mail, MessageSquareText, Phone } from "lucide-react";
 import { z } from "zod";
 
 import { PageIntro } from "@/components/site-shell";
