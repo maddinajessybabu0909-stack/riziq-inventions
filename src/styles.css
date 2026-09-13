@@ -230,7 +230,7 @@
   .liquid-timeline { --timeline-progress: 0; position: relative; margin-left: 0.6rem; border-left: 4px solid var(--about-track); }
   .liquid-timeline::before { content: ""; position: absolute; z-index: 0; top: 0; left: -4px; width: 4px; height: 100%; transform: scaleY(var(--timeline-progress)); transform-origin: top; border-radius: 999px; background: linear-gradient(to bottom, var(--about-liquid-start), var(--about-liquid-mid) 55%, var(--about-liquid-end)); box-shadow: 0 0 20px color-mix(in oklab, var(--about-liquid-mid) 60%, transparent); transition: transform 100ms linear; }
   .liquid-timeline::after { content: ""; position: absolute; z-index: 1; top: calc(var(--timeline-progress) * 100%); left: -0.48rem; width: 0.8rem; height: 0.8rem; transform: translateY(-50%); border: 2px solid var(--hero-foreground); border-radius: 999px; background: var(--about-liquid-mid); box-shadow: 0 0 18px var(--about-liquid-mid); transition: top 100ms linear; }
-  .liquid-timeline-item { position: relative; display: grid; grid-template-columns: 2.75rem 1fr; gap: 1rem; min-height: 25rem; padding-left: 2rem; }
+  .liquid-timeline-item { position: relative; display: grid; grid-template-columns: 2.75rem 1fr; gap: 1rem; min-height: 18rem; padding-left: 2rem; }
   .liquid-timeline-item:last-child { min-height: 0; }
   .liquid-node { position: absolute; z-index: 2; top: 0.25rem; left: -0.68rem; display: grid; width: 1.1rem; height: 1.1rem; place-items: center; border: 3px solid var(--about-surface-deep); border-radius: 999px; background: var(--about-track); }
   .liquid-node span { width: 0.32rem; height: 0.32rem; border-radius: 999px; background: var(--hero-foreground); }
