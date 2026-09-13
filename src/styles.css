@@ -272,27 +272,32 @@
   .service-detail-related:hover, .service-detail-related:focus-visible { transform: translateY(-4px); box-shadow: 0 16px 34px oklch(0.22 0.06 258 / 12%); outline: none; }
   .stat-icon { display: grid; width: 2.5rem; height: 2.5rem; flex: none; place-items: center; border-radius: 0.4rem; background: oklch(0.93 0.045 245); color: var(--highlight); }
   .content-card { border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); padding: 1.75rem; box-shadow: 0 8px 24px oklch(0.22 0.05 258 / 6%); }
-  .partnership-section { position: relative; overflow: hidden; background: var(--background); padding-block: 5.5rem; }
+  .partnership-section { position: relative; overflow: hidden; background: var(--background); padding-block: 3.5rem; }
   .partnership-section-compact { background: var(--section); }
   .partnership-frame { display: grid; overflow: hidden; border: 1px solid color-mix(in oklab, var(--partner-blue) 24%, var(--border)); border-radius: var(--radius); background: var(--partner-surface); box-shadow: 0 24px 60px oklch(0.12 0.04 255 / 18%); }
-  .partnership-brand { position: relative; display: flex; min-height: 22rem; flex-direction: column; justify-content: center; padding: 2.25rem; }
-  .partnership-brand::after { content: ""; position: absolute; inset: auto 2.25rem 0; height: 3px; background: linear-gradient(90deg, var(--partner-orange) 0 30%, var(--partner-blue) 30% 76%, transparent 76%); }
+  .partnership-brand { position: relative; display: flex; min-height: 18rem; flex-direction: column; justify-content: center; padding: 1.75rem; }
+  .partnership-brand::after { content: ""; position: absolute; inset: auto 1.75rem 0; height: 3px; background: linear-gradient(90deg, var(--partner-orange) 0 30%, var(--partner-blue) 30% 76%, transparent 76%); }
   .partnership-kicker { color: var(--partner-blue); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; }
-  .partnership-identity { display: flex; align-items: center; gap: 1.25rem; margin-top: 2.25rem; }
-  .partnership-symbol { width: clamp(5rem, 12vw, 7.5rem); height: auto; flex: none; object-fit: contain; }
+  .partnership-identity { display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; }
+  .partnership-symbol { width: clamp(4.5rem, 11vw, 6.5rem); height: auto; flex: none; object-fit: contain; }
   .partnership-brand-copy { min-width: 0; font-family: "Michroma", ui-sans-serif, sans-serif; }
-  .partnership-name { color: var(--hero-foreground); font-size: clamp(1.15rem, 2.3vw, 1.8rem); white-space: nowrap; }
+  .partnership-name { color: var(--hero-foreground); font-size: clamp(1.1rem, 2.1vw, 1.65rem); white-space: nowrap; }
   .partnership-name span { color: var(--partner-orange); }
-  .partnership-tagline { margin-top: 0.65rem; color: var(--partner-blue); font-size: clamp(0.5rem, 1vw, 0.72rem); white-space: nowrap; }
+  .partnership-tagline { margin-top: 0.5rem; color: var(--partner-blue); font-size: clamp(0.48rem, 0.95vw, 0.7rem); white-space: nowrap; }
   .partnership-tagline span { color: var(--partner-orange); }
-  .partnership-story { border-top: 1px solid color-mix(in oklab, var(--partner-blue) 20%, transparent); background: color-mix(in oklab, var(--partner-blue) 5%, var(--partner-surface)); padding: 2.25rem; color: var(--hero-foreground); }
-  .partnership-index { display: block; color: var(--partner-orange); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
-  .partnership-story h2 { margin-top: 1.15rem; max-width: 36rem; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; line-height: 1.12; }
-  .partnership-story > p { margin-top: 1.15rem; max-width: 40rem; color: var(--hero-muted); line-height: 1.75; }
-  .partnership-bridge { display: grid; align-items: center; gap: 0.75rem; margin-top: 2rem; }
-  .partnership-bridge > div { display: flex; align-items: center; gap: 0.75rem; min-height: 3.25rem; border-left: 2px solid var(--partner-blue); background: color-mix(in oklab, var(--hero-foreground) 5%, transparent); padding: 0.75rem 1rem; font-size: 0.8rem; font-weight: 700; }
+  .partnership-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+  .partnership-link { display: inline-flex; align-items: center; gap: 0.4rem; border: 1px solid color-mix(in oklab, var(--partner-blue) 30%, var(--border)); border-radius: 999px; background: color-mix(in oklab, var(--hero-foreground) 5%, transparent); padding: 0.45rem 0.7rem; color: var(--hero-foreground); font-size: 0.72rem; font-weight: 700; text-decoration: none; transition: background-color 200ms ease, border-color 200ms ease, transform 200ms ease; }
+  .partnership-link:hover, .partnership-link:focus-visible { border-color: color-mix(in oklab, var(--partner-blue) 60%, transparent); background: color-mix(in oklab, var(--partner-blue) 12%, transparent); transform: translateY(-2px); outline: none; }
+  .partnership-link svg { flex: none; color: var(--partner-blue); }
+  .partnership-link-arrow { width: 0.75rem; height: 0.75rem; margin-left: 0.1rem; color: var(--partner-orange); opacity: 0; transform: translate(-2px, 2px); transition: opacity 200ms ease, transform 200ms ease; }
+  .partnership-link:hover .partnership-link-arrow, .partnership-link:focus-visible .partnership-link-arrow { opacity: 1; transform: translate(0, 0); }
+  .partnership-story { border-top: 1px solid color-mix(in oklab, var(--partner-blue) 20%, transparent); background: color-mix(in oklab, var(--partner-blue) 5%, var(--partner-surface)); padding: 1.75rem; color: var(--hero-foreground); }
+  .partnership-story h2 { max-width: 36rem; font-size: clamp(1.5rem, 3.5vw, 2.5rem); font-weight: 700; line-height: 1.12; }
+  .partnership-story > p { margin-top: 0.9rem; max-width: 40rem; color: var(--hero-muted); line-height: 1.7; }
+  .partnership-bridge { display: grid; align-items: center; gap: 0.75rem; margin-top: 1.5rem; }
+  .partnership-bridge > div { display: flex; align-items: center; gap: 0.75rem; min-height: 2.75rem; border-left: 2px solid var(--partner-blue); background: color-mix(in oklab, var(--hero-foreground) 5%, transparent); padding: 0.6rem 0.9rem; font-size: 0.8rem; font-weight: 700; }
   .partnership-bridge > div:first-child { border-color: var(--partner-orange); }
-  .partnership-bridge svg { width: 1.1rem; height: 1.1rem; flex: none; color: var(--partner-blue); }
+  .partnership-bridge svg { width: 1.05rem; height: 1.05rem; flex: none; color: var(--partner-blue); }
   .partnership-bridge > div:first-child svg { color: var(--partner-orange); }
   .partnership-bridge-arrow { display: none; }
   .project-showcase-list { display: grid; gap: 5rem; }
@@ -393,8 +398,9 @@
 
 @media (min-width: 768px) {
   .partnership-frame { grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr); }
-  .partnership-brand { min-height: 31rem; padding: 3.25rem; }
-  .partnership-story { display: flex; flex-direction: column; justify-content: center; border-top: 0; border-left: 1px solid color-mix(in oklab, var(--partner-blue) 20%, transparent); padding: 3.25rem; }
+  .partnership-brand { min-height: 26rem; padding: 2.25rem; }
+  .partnership-brand::after { inset-inline: 2.25rem; }
+  .partnership-story { display: flex; flex-direction: column; justify-content: center; border-top: 0; border-left: 1px solid color-mix(in oklab, var(--partner-blue) 20%, transparent); padding: 2.25rem; }
   .partnership-bridge { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
   .partnership-bridge-arrow { display: block; color: var(--partner-blue); transform: rotate(45deg); }
   .service-detail-offering-last {

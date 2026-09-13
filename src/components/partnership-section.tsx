@@ -1,6 +1,14 @@
-import { ArrowUpRight, CircuitBoard, Code2 } from "lucide-react";
+import { ArrowUpRight, CircuitBoard, Code2, Globe, GraduationCap, Instagram, Linkedin, Wrench } from "lucide-react";
 
 import instructIqSymbol from "@/assets/instructiq-symbol.png.asset.json";
+
+const partnerLinks = [
+  { icon: Globe, label: "Website", href: "https://www.instructiq.in" },
+  { icon: Wrench, label: "Services", href: "https://www.services.instructiq.in" },
+  { icon: GraduationCap, label: "Academy", href: "https://www.academy.instructiq.in" },
+  { icon: Instagram, label: "Instagram", href: "https://instagram.com/instructiq.in/" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/company/instructiq" },
+];
 
 export function PartnershipSection({ compact = false }: { compact?: boolean }) {
   return (
@@ -23,10 +31,26 @@ export function PartnershipSection({ compact = false }: { compact?: boolean }) {
                 <p className="partnership-tagline">Where <span>IQ</span> Meets IT</p>
               </div>
             </div>
+
+            <div className="partnership-links" aria-label="InstructIQ links">
+              {partnerLinks.map(({ icon: Icon, label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="partnership-link"
+                  aria-label={`${label} (opens in new tab)`}
+                >
+                  <Icon className="size-3.5" aria-hidden="true" />
+                  <span>{label}</span>
+                  <ArrowUpRight className="partnership-link-arrow" aria-hidden="true" />
+                </a>
+              ))}
+            </div>
           </div>
 
           <div className="partnership-story">
-            <span className="partnership-index">01 / Strategic collaboration</span>
             <h2>Software intelligence meets hands-on engineering.</h2>
             <p>
               InstructIQ is a research-minded EdTech startup building the systems behind how people learn,
