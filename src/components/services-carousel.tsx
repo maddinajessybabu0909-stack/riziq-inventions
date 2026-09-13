@@ -43,12 +43,15 @@ export function ServicesCarousel() {
   const [paused, setPaused] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const pages = useMemo(
-    () => Array.from({ length: Math.ceil(services.length / visibleCount) }, (_, page) =>
-      services.slice(page * visibleCount, (page + 1) * visibleCount),
-    ),
-    [visibleCount],
-  );
+  const pages = useMemo(() => {
+    const pageCount = Math.ceil(services.length / visibleCount);
+    return Array.from({ length: pageCount }, (_, page) => {
+      const start = page * visibleCount;
+      const remaining = services.length - start;
+      const adjustedStart = remaining < visibleCount ? Math.max(0, services.length - visibleCount) : start;
+      return services.slice(adjustedStart, adjustedStart + visibleCount);
+    });
+  }, [visibleCount]);
 
   useEffect(() => {
     const updateVisibleCount = () => setVisibleCount(getVisibleCount());
@@ -65,7 +68,7 @@ export function ServicesCarousel() {
     if (paused || pages.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     timerRef.current = setInterval(() => {
       setActivePage((current) => (current + 1) % pages.length);
-    }, 3000);
+    }, 3500);
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
@@ -97,9 +100,9 @@ export function ServicesCarousel() {
               aria-hidden={activePage !== pageIndex}
               inert={activePage !== pageIndex}
             >
-              {page.map((service, serviceIndex) => {
+              {page.map((service) => {
                 const Icon = serviceIcons[service.slug];
-                const catalogueIndex = pageIndex * visibleCount + serviceIndex;
+                const catalogueIndex = services.findIndex((item) => item.slug === service.slug);
                 const tone = catalogueIndex % 3 === 0 ? "service-blue" : catalogueIndex % 3 === 1 ? "service-violet" : "service-teal";
                 return (
                   <Link key={service.slug} to="/services/$service" params={{ service: service.slug }} className="service-card group block w-full">
