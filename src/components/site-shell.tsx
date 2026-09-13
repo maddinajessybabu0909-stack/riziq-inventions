@@ -83,7 +83,7 @@ export function SiteFooter() {
         <div className="footer-spectrum absolute inset-x-0 top-0 h-1" aria-hidden="true" />
         <div className="grid gap-10 border-b border-footer-border pb-9 lg:grid-cols-[1.35fr_1fr_1fr]">
           <div>
-            <Link to="/" className="footer-logo-frame inline-flex" aria-label="RIZIQ home">
+            <Link to="/" className="inline-flex" aria-label="RIZIQ home">
               <img src={horizontalLogo} alt="RIZIQ" className="h-11 w-auto object-contain object-left" />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-6 text-footer-muted">

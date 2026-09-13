@@ -122,7 +122,6 @@
   --section: oklch(0.965 0.015 243);
   --cta: linear-gradient(110deg, oklch(0.21 0.13 263), oklch(0.34 0.18 254), oklch(0.52 0.15 215));
   --footer-surface: oklch(0.19 0.065 257);
-  --footer-logo-surface: oklch(0.99 0.004 250);
   --footer-foreground: oklch(0.98 0.004 248);
   --footer-muted: oklch(0.76 0.025 246);
   --footer-border: oklch(1 0 0 / 13%);
@@ -191,7 +190,6 @@
   .page-intro { background: linear-gradient(125deg, oklch(0.18 0.1 260), oklch(0.31 0.13 244)); }
   .footer-panel { background: var(--footer-surface); }
   .footer-spectrum { background: linear-gradient(90deg, oklch(0.62 0.22 253) 0 30%, oklch(0.72 0.15 194) 30% 55%, oklch(0.64 0.23 296) 55% 78%, oklch(0.81 0.17 76) 78% 100%); }
-  .footer-logo-frame { border-radius: var(--radius); background: var(--footer-logo-surface); padding: 0.55rem 0.75rem; }
   .footer-link { color: var(--footer-muted); transition: color 180ms ease; }
   .footer-link:hover { color: var(--footer-foreground); }
   .status-dot { background: var(--primary); box-shadow: 0 0 0 4px oklch(0.66 0.18 208 / 18%); }
