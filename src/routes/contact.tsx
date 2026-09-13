@@ -1,10 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Instagram, Linkedin, Mail, MessageSquareText, Phone } from "lucide-react";
+import { ArrowRight, CheckCircle2, Instagram, Linkedin, Mail, MessageSquareText, Phone } from "lucide-react";
+import { useState, type FormEvent } from "react";
 import { z } from "zod";
 
 import { PageIntro } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { getService, services } from "@/lib/services-data";
+
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mjyvqoqb";
 
 export const Route = createFileRoute("/contact")({
   validateSearch: (search) => z.object({ service: z.string().optional() }).parse(search),
