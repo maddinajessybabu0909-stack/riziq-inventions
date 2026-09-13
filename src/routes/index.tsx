@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImage from "@/assets/riziq-hero-natural.jpg";
 import partnerImage from "@/assets/riziq-partner-natural.jpg";
 import { ImpactStats } from "@/components/impact-stats";
-import { PartnershipSection } from "@/components/partnership-section";
 import { ServicesCarousel } from "@/components/services-carousel";
 import { Button } from "@/components/ui/button";
 
