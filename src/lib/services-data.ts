@@ -9,6 +9,19 @@ export const services = [
     process: ["Understand the workflow and success criteria", "Prototype the critical experience", "Build in measurable releases", "Launch, learn and improve"],
     outputs: ["Product roadmap", "Experience prototype", "Production-ready application", "Technical documentation"],
     fit: "New digital products, modernization initiatives and operational tools that have outgrown spreadsheets or disconnected systems.",
+    offerings: [
+      { title: "Custom web applications", detail: "Dashboards, portals and internal platforms built with modern React front-ends and secure, well-structured back-ends." },
+      { title: "Mobile applications", detail: "Cross-platform apps with offline-friendly behaviour, notifications and clean, accessible interfaces." },
+      { title: "APIs and integrations", detail: "Connecting payments, messaging, ERP or existing databases so data moves without manual re-entry." },
+      { title: "Cloud setup and deployment", detail: "Hosting, environments, backups and monitoring so releases are predictable rather than risky." },
+      { title: "Maintenance and improvement", detail: "Ongoing fixes, performance work and feature releases after launch." },
+    ],
+    tech: ["React", "TypeScript", "Node.js", "Python", "PostgreSQL", "REST & GraphQL APIs", "Cloud hosting", "CI/CD"],
+    faqs: [
+      { q: "How long does a typical project take?", a: "A focused first release usually takes a few weeks to a few months, depending on scope. We plan it in stages so you see working software early." },
+      { q: "Can you work with our existing system?", a: "Yes. We regularly extend or integrate with existing databases, tools and third-party services rather than replacing everything." },
+      { q: "Who owns the code?", a: "You do. Source code, documentation and accounts are handed over to you." },
+    ],
   },
   {
     slug: "ai-machine-learning",
@@ -20,6 +33,19 @@ export const services = [
     process: ["Define the decision or task to improve", "Assess available data and risk", "Prototype and evaluate", "Integrate with clear safeguards"],
     outputs: ["Feasibility report", "Working proof of concept", "Evaluation framework", "Integrated AI capability"],
     fit: "Teams with a repeatable decision, information bottleneck or manual process that can be measured before and after implementation.",
+    offerings: [
+      { title: "Prediction and forecasting models", detail: "Demand, failure, risk or quality predictions built on your historical data and validated against real outcomes." },
+      { title: "Computer vision", detail: "Image and video models for inspection, counting, detection and quality checks." },
+      { title: "Document and knowledge assistants", detail: "Question-answering over your own manuals, reports and records, with source references." },
+      { title: "Workflow automation with AI", detail: "Classifying, summarising and routing incoming information so people spend time on judgement, not sorting." },
+      { title: "Model evaluation and monitoring", detail: "Accuracy tracking, drift checks and human review steps so behaviour stays understood over time." },
+    ],
+    tech: ["Python", "PyTorch", "scikit-learn", "OpenCV", "LLM APIs", "Vector databases", "MLOps pipelines"],
+    faqs: [
+      { q: "We do not have much data. Can we still start?", a: "Often yes. We begin with a readiness check and, where data is thin, start with rule-based or pre-trained approaches while data is collected properly." },
+      { q: "How do you keep AI outputs trustworthy?", a: "Every build includes an evaluation set, clear limits on what the system decides alone, and a human review step for high-impact cases." },
+      { q: "Will our data be used to train public models?", a: "No. Data handling is agreed in writing before work starts." },
+    ],
   },
   {
     slug: "iot-solutions",
@@ -31,6 +57,19 @@ export const services = [
     process: ["Map the environment and decisions", "Select and test the sensing approach", "Pilot in real conditions", "Scale with monitoring and support"],
     outputs: ["System architecture", "Connected prototype", "Operations dashboard", "Deployment playbook"],
     fit: "Agriculture, facilities, energy and distributed operations where teams need timely insight beyond manual checks.",
+    offerings: [
+      { title: "Sensor node design", detail: "Selecting and assembling sensing hardware for temperature, moisture, power, motion, air quality and more." },
+      { title: "Connectivity and gateways", detail: "WiFi, LoRa, GSM or BLE links chosen for range, power and site conditions, with reliable buffering when networks drop." },
+      { title: "Monitoring dashboards", detail: "Live readings, history, thresholds and exports that field and management teams can both use." },
+      { title: "Alerts and automation", detail: "SMS, email or app notifications triggered by conditions, plus automatic control actions where appropriate." },
+      { title: "Pilot deployment and support", detail: "Installation guidance, calibration and a maintenance plan for the first live site." },
+    ],
+    tech: ["ESP32", "Raspberry Pi", "LoRaWAN", "MQTT", "Node.js", "Time-series databases", "Cloud dashboards"],
+    faqs: [
+      { q: "Can you work at one site before scaling?", a: "Yes, and we recommend it. A pilot site proves the sensing approach and cost per node before wider rollout." },
+      { q: "What if internet coverage is poor?", a: "Devices store readings locally and sync when the connection returns, so no data is lost." },
+      { q: "Do you supply the hardware?", a: "We can specify it for you to procure, or assemble prototype units ourselves - whichever suits your procurement process." },
+    ],
   },
   {
     slug: "robotics",
@@ -42,6 +81,19 @@ export const services = [
     process: ["Observe the task and constraints", "Model the automation concept", "Build and test a prototype", "Validate performance and next steps"],
     outputs: ["Automation concept", "Functional prototype", "Test findings", "Scale-up recommendations"],
     fit: "Repetitive, hazardous or precision-critical tasks where a controlled prototype can reduce implementation risk.",
+    offerings: [
+      { title: "Automation feasibility study", detail: "An honest read on whether a task should be automated, partially assisted, or left to people." },
+      { title: "Motion and control prototypes", detail: "Motors, drives, actuators and controllers assembled into a working rig that performs the real task." },
+      { title: "Machine vision guidance", detail: "Cameras and detection models that let a system locate, sort or inspect parts." },
+      { title: "Mobile and educational robots", detail: "Line-following, navigation and manipulator platforms for research, labs and demonstrations." },
+      { title: "Safety and validation planning", detail: "Guarding, stop behaviour and repeatability testing documented before anything goes near production." },
+    ],
+    tech: ["ROS", "Arduino & STM32", "Python", "OpenCV", "3D printing", "CAD", "PLC & motor control"],
+    faqs: [
+      { q: "Do you build full production lines?", a: "Our strength is the concept and prototype stage. We validate the approach and hand over findings for integration partners to scale." },
+      { q: "Can students or research teams work with you?", a: "Yes. We support academic robotics projects, lab setups and competition builds." },
+      { q: "How is safety handled?", a: "Safe stop behaviour, guarding and operating limits are designed in from the first prototype, not added afterwards." },
+    ],
   },
   {
     slug: "embedded-systems",
@@ -53,6 +105,19 @@ export const services = [
     process: ["Define operating requirements", "Select the platform and architecture", "Develop through hardware-in-loop tests", "Validate and document"],
     outputs: ["Firmware codebase", "Integrated device prototype", "Validation results", "Manufacturing handoff package"],
     fit: "Connected products, instrumentation and control devices that require dependable behavior under real operating constraints.",
+    offerings: [
+      { title: "Firmware development", detail: "Bare-metal or RTOS firmware written for clarity, low power and predictable behaviour." },
+      { title: "Board bring-up and peripherals", detail: "Getting sensors, displays, storage and radios talking over I2C, SPI, UART and CAN." },
+      { title: "Circuit and PCB support", detail: "Schematic review, prototype wiring and guidance on layout for production boards." },
+      { title: "Power optimisation", detail: "Sleep strategies and measurement so battery devices last as long as the use case demands." },
+      { title: "Testing and handover", detail: "Diagnostics, firmware update paths and documentation ready for manufacturing." },
+    ],
+    tech: ["C / C++", "STM32", "ESP32", "FreeRTOS", "I2C / SPI / UART / CAN", "KiCad", "Oscilloscope & logic analysis"],
+    faqs: [
+      { q: "Can you take over firmware someone else started?", a: "Yes. We begin with a short code and hardware review so expectations on effort are clear before we continue." },
+      { q: "Do you handle certification?", a: "We prepare designs and documentation with compliance in mind and work alongside your certification lab." },
+      { q: "What do we receive at the end?", a: "Source firmware, build instructions, test results and a handover document for your manufacturing partner." },
+    ],
   },
   {
     slug: "training-workshops",
@@ -64,6 +129,19 @@ export const services = [
     process: ["Assess participants and goals", "Design the learning journey", "Deliver practical sessions", "Provide resources and next steps"],
     outputs: ["Tailored curriculum", "Facilitated sessions", "Hands-on exercises", "Learning resources"],
     fit: "Leadership teams, engineers, educators and organizations preparing to adopt or evaluate new technology responsibly.",
+    offerings: [
+      { title: "AI and machine learning foundations", detail: "What the technology can and cannot do, with guided exercises on real datasets." },
+      { title: "IoT and embedded labs", detail: "Participants wire sensors, flash firmware and see their own data appear on a dashboard." },
+      { title: "Robotics and automation sessions", detail: "Build, program and test a working robot task in a guided lab format." },
+      { title: "Faculty and institutional programs", detail: "Curriculum support, lab setup guidance and train-the-trainer sessions for colleges." },
+      { title: "Team upskilling for organisations", detail: "Custom tracks for engineering or leadership teams, built around your own use cases." },
+    ],
+    tech: ["On-site or online delivery", "Starter kits and lab guides", "Project-based assessment", "Certificates of participation"],
+    faqs: [
+      { q: "What group sizes do you handle?", a: "From small team sessions to full classroom cohorts. Hands-on labs work best in smaller groups with shared kits." },
+      { q: "Do participants need prior experience?", a: "No. We set the starting level after a short assessment of the group." },
+      { q: "Can sessions run online?", a: "Yes, with simulation and remote labs, though hardware sessions are far stronger in person." },
+    ],
   },
   {
     slug: "research-publications",
@@ -75,6 +153,19 @@ export const services = [
     process: ["Understand the research objective", "Map the existing landscape", "Develop the approach and draft", "Refine and prepare for submission"],
     outputs: ["Research proposal", "Review document", "Draft manuscript", "Submission-ready paper"],
     fit: "Students, researchers, educators and organisations turning technical work into published, peer-reviewed or institutional research output.",
+    offerings: [
+      { title: "Topic and gap identification", detail: "Finding a question that is genuinely open, feasible with your resources and worth publishing." },
+      { title: "Literature review", detail: "Structured reading, comparison tables and a synthesis that positions your contribution clearly." },
+      { title: "Methodology and experiments", detail: "Designing the study, setting up implementation and analysing results honestly." },
+      { title: "Manuscript preparation", detail: "Drafting, figures, formatting and language work aligned to the target journal or conference template." },
+      { title: "Submission and revision support", detail: "Journal shortlisting, submission guidance and help responding to reviewer comments." },
+    ],
+    tech: ["IEEE & Springer formats", "LaTeX / Word templates", "Reference management", "Plagiarism and similarity checks", "Data analysis and plotting"],
+    faqs: [
+      { q: "Do you guarantee publication?", a: "No one honestly can. We strengthen the work and the writing so it stands the best chance with reviewers." },
+      { q: "Is this ethical support?", a: "Yes. We guide, review and teach. The research and authorship remain yours - we do not sell authorship or fabricate results." },
+      { q: "Can you help with a thesis as well?", a: "Yes, including structure, methodology chapters and defence preparation." },
+    ],
   },
 ] as const;
 
