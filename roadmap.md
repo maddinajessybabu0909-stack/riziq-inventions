@@ -26,3 +26,4 @@
 - [x] Restyle individual service pages with bright backgrounds and domain-specific engineering accents
 - [x] Expand impact statistics and add scroll-triggered count animations
 - [x] Add the InstructIQ collaboration section to the homepage and About page
+- [x] Add a two-image, 3.5-second gallery carousel to the About page

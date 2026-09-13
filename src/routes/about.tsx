@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight, Compass, Eye, FlaskConical, Gauge, Graduation
 
 import classroomImage from "@/assets/riziq-purpose-classroom.png.asset.json";
 import jessyPortrait from "@/assets/jessy-yadav-transparent.png";
+import { AboutGalleryCarousel } from "@/components/about-gallery-carousel";
 import { ImpactStats } from "@/components/impact-stats";
 import { PartnershipSection } from "@/components/partnership-section";
 import { Button } from "@/components/ui/button";
@@ -118,6 +119,17 @@ function AboutPage() {
       <div className="overflow-hidden rounded-lg shadow-media"><img src={classroomImage.url} alt="Jessy Yadav Maddina teaching microcontrollers in a digital classroom" className="aspect-[8/5] h-full w-full object-cover" width={1482} height={1062} loading="lazy" /></div>
       <div><p className="section-kicker">Our purpose</p><h2 className="mt-3 text-3xl font-bold md:text-4xl">Turn knowledge into the confidence to build.</h2><p className="mt-5 leading-7 text-muted-foreground">RIZIQ brings concepts to life through clear teaching, practical experimentation and guided engineering. Learners move from understanding how technology works to creating software, electronics and intelligent systems of their own.</p><Button asChild className="mt-7 font-bold"><Link to="/contact">Learn and build with us <ArrowRight /></Link></Button></div>
     </div></section>
+
+    <section className="about-gallery-section bg-section py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 md:px-8">
+        <div className="max-w-2xl">
+          <p className="section-kicker">Inside RIZIQ</p>
+          <h2 className="mt-3 text-3xl font-bold md:text-5xl">Learning, building and collaborating in action.</h2>
+          <p className="mt-5 leading-7 text-muted-foreground">A closer look at our classrooms, technical sessions, institutional partnerships and shared milestones.</p>
+        </div>
+        <AboutGalleryCarousel />
+      </div>
+    </section>
 
     <PartnershipSection />
 
