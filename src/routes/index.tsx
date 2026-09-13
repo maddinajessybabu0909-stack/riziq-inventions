@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImage from "@/assets/riziq-hero-natural.jpg";
-import msmeRegistration from "@/assets/msme-registration-transparent.png.asset.json";
+import msmeRegistration from "@/assets/msme-registration-white.png.asset.json";
 import partnerImage from "@/assets/riziq-partner-natural.jpg";
 import { ImpactStats } from "@/components/impact-stats";
 import { ServicesCarousel } from "@/components/services-carousel";
@@ -47,13 +47,13 @@ function Index() {
               <Button asChild size="lg" variant="outline" className="h-12 border-hero-border bg-hero-soft px-6 font-bold text-hero-foreground hover:bg-hero-soft hover:text-hero-foreground"><Link to="/projects">View Our Capabilities</Link></Button>
             </div>
             <div className="mt-8 border-t border-hero-border pt-5">
-              <p className="mb-2 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-hero-muted">Registered under</p>
+              <p className="mb-3 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-hero-muted">Registered under</p>
               <img
                 src={msmeRegistration.url}
                 alt="Registered under the Ministry of Micro, Small and Medium Enterprises, Government of India"
-                className="h-auto w-full max-w-[19rem] object-contain object-left"
-                width={659}
-                height={302}
+                className="h-auto w-full max-w-[23rem] object-contain object-left"
+                width={847}
+                height={385}
               />
             </div>
           </div>
