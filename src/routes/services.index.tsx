@@ -1,16 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, BookOpen, Bot, BrainCircuit, Code2, Cpu, GraduationCap, RadioTower } from "lucide-react";
+import { ArrowRight, BookOpen, Bot, BrainCircuit, Building2, Code2, Cpu, DraftingCompass, GraduationCap, RadioTower, Sigma } from "lucide-react";
 
 import { PageIntro } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { services } from "@/lib/services-data";
 
-const icons = { "software-development": Code2, "ai-machine-learning": BrainCircuit, "iot-solutions": RadioTower, robotics: Bot, "embedded-systems": Cpu, "training-workshops": GraduationCap, "research-publications": BookOpen } as const;
+const icons = { "software-development": Code2, "ai-machine-learning": BrainCircuit, "iot-solutions": RadioTower, robotics: Bot, "embedded-systems": Cpu, "mechanical-engineering-cad-cae": DraftingCompass, "matlab-engineering-simulation": Sigma, "civil-engineering-design": Building2, "training-workshops": GraduationCap, "research-publications": BookOpen } as const;
 
 export const Route = createFileRoute("/services/")({
   head: () => ({ meta: [
     { title: "Technology Services | RIZIQ" },
-    { name: "description", content: "Explore RIZIQ services across software, AI, IoT, robotics, embedded systems, technical training and research publications." },
+    { name: "description", content: "Explore RIZIQ services across software, AI, IoT, robotics, embedded and VLSI, mechanical, simulation, civil design, training and research." },
     { property: "og:title", content: "Technology Services | RIZIQ" },
     { property: "og:description", content: "End-to-end technology services from research through delivery." },
     { property: "og:type", content: "website" },

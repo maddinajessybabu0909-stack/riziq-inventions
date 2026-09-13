@@ -19,3 +19,4 @@
 - [x] Refresh Projects and project stories with a clean, image-led visual system
 - [x] Restore an alternating editorial layout for the Projects overview
 - [x] Restore the original no-hover Projects layout with quotation blocks
+- [x] Expand Services with mechanical, MATLAB simulation and civil engineering disciplines
