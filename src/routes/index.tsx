@@ -116,9 +116,9 @@ function Index() {
           <p className="section-kicker">What we do</p>
           <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">Our Core <span className="text-highlight">Services</span></h2>
           <p className="mt-3 max-w-2xl text-muted-foreground">We deliver end-to-end technology solutions - from engineering to research publication - to turn your ideas into scalable and impactful outcomes.</p>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
             {services.map(({ title, text, icon: Icon, tone }) => (
-              <article key={title} className="service-card group">
+              <article key={title} className="service-card group w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)] xl:w-[calc(25%-0.75rem)]">
                 <div className={`service-icon ${tone}`}><Icon className="size-6" /></div>
                 <h3 className="mt-5 text-sm font-extrabold leading-5">{title}</h3>
                 <p className="mt-2 text-xs leading-5 text-muted-foreground">{text}</p>
