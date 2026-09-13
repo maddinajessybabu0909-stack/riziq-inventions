@@ -65,6 +65,17 @@ export const services = [
     outputs: ["Tailored curriculum", "Facilitated sessions", "Hands-on exercises", "Learning resources"],
     fit: "Leadership teams, engineers, educators and organizations preparing to adopt or evaluate new technology responsibly.",
   },
+  {
+    slug: "research-publications",
+    title: "Research & Publications",
+    short: "Guided research support that turns ideas into structured, publishable work.",
+    promise: "Help researchers and teams move from an idea to a credible, well-presented contribution.",
+    description: "We support academic and applied research journeys - from topic selection and literature review to methodology, documentation and publication readiness - with a focus on clarity, rigour and practical relevance.",
+    capabilities: ["Research topic and gap identification", "Literature review and synthesis", "Methodology and experiment design", "Paper writing and journal alignment"],
+    process: ["Understand the research objective", "Map the existing landscape", "Develop the approach and draft", "Refine and prepare for submission"],
+    outputs: ["Research proposal", "Review document", "Draft manuscript", "Submission-ready paper"],
+    fit: "Students, researchers, educators and organisations turning technical work into published, peer-reviewed or institutional research output.",
+  },
 ] as const;
 
 export type Service = (typeof services)[number];
