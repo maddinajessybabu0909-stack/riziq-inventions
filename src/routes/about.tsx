@@ -25,10 +25,17 @@ const principles = [
 ];
 
 const timeline = [
-  { year: "The beginning", title: "A practical question", text: "RIZIQ began with a belief that research should travel further—out of reports and prototypes, into tools people can rely on." },
+  { year: "The beginning", title: "A practical question", text: "RIZIQ began with a belief that research should travel further - out of reports and prototypes, into tools people can rely on." },
   { year: "Building the practice", title: "Disciplines came together", text: "Software, connected hardware, intelligent systems and product thinking became one integrated way of solving complex problems." },
   { year: "Working in the real world", title: "Context shaped the technology", text: "Field conditions, operational constraints and user feedback became part of the engineering process, not an afterthought." },
   { year: "What comes next", title: "Responsible scale", text: "We continue building partnerships that turn promising ideas into useful systems with measurable, lasting value." },
+];
+
+const journeySteps = [
+  { title: "Learn", text: "Build clear foundations", to: "/services" as const },
+  { title: "Experiment", text: "Test ideas in practice", to: "/projects" as const },
+  { title: "Engineer", text: "Turn insight into systems", to: "/services" as const },
+  { title: "Create impact", text: "Start a meaningful project", to: "/contact" as const },
 ];
 
 function AboutPage() {
@@ -61,21 +68,18 @@ function AboutPage() {
         <header className="relative border-b border-hero-border pb-14 md:pb-20">
           <p className="about-kicker">Research · Learning · Engineering</p>
           <h1 className="mt-6 max-w-5xl text-5xl font-bold leading-[0.95] md:text-8xl">We turn curiosity into <span className="text-primary">capability.</span></h1>
-          <div className="mt-8 grid gap-7 md:grid-cols-[1fr_1fr] md:items-end">
+          <div className="mt-8 max-w-2xl">
             <p className="max-w-xl text-lg leading-8 text-hero-muted md:text-xl">RIZIQ exists to close the gap between understanding technology and building something meaningful with it.</p>
-            <p className="max-w-lg text-sm leading-7 text-hero-muted md:justify-self-end">We unite clear teaching, practical experimentation and disciplined engineering—helping learners, teams and organizations move confidently from an idea to real-world impact.</p>
           </div>
           <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-md border border-hero-border bg-hero-border sm:grid-cols-4">
-            {["Learn", "Experiment", "Engineer", "Create impact"].map((item, index) => (
-              <div key={item} className="about-step group bg-hero-soft px-4 py-4">
+            {journeySteps.map((item, index) => (
+              <Link key={item.title} to={item.to} className="about-step group bg-hero-soft px-4 py-4" aria-label={`${item.title}: ${item.text}`}>
                 <span className="about-step-glow" aria-hidden="true" />
-                <span className="about-step-number">0{index + 1}</span>
-                <strong className="relative mt-1 flex items-center justify-between gap-2 text-sm transition-colors duration-200 group-hover:text-hero-foreground">
-                  {item}
-                  <ArrowUpRight className="size-3.5 shrink-0 -translate-x-1 translate-y-1 text-primary opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
-                </strong>
+                <span className="about-step-top"><span className="about-step-number">0{index + 1}</span><ArrowUpRight className="about-step-arrow" /></span>
+                <strong className="about-step-title">{item.title}</strong>
+                <span className="about-step-detail">{item.text}</span>
                 <span className="about-step-bar" aria-hidden="true" />
-              </div>
+              </Link>
             ))}
           </div>
         </header>
@@ -89,20 +93,15 @@ function AboutPage() {
           <div className="text-center md:text-left">
             <p className="about-kicker">Leadership</p>
             <h2 className="mt-4 text-3xl font-bold md:text-5xl">Jessy Yadav Maddina</h2>
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-2 md:justify-start">
-              <span className="text-lg font-semibold text-primary">Founder &amp; CEO</span>
-              <span className="leader-pill inline-flex items-center gap-1 rounded-full border border-hero-border bg-hero-soft px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-hero-muted">
-                <GraduationCap className="size-3 text-primary transition-transform duration-300 group-hover:rotate-12" />
-                M.Tech
-              </span>
-            </div>
-            <div className="leader-badge group mx-auto mt-7 inline-flex cursor-default items-center gap-4 rounded-lg border border-hero-border bg-hero-soft/60 px-5 py-4 md:mx-0">
-              <div className="grid size-11 place-items-center rounded-md bg-hero-soft text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
-                <Users className="size-5 transition-transform duration-300 group-hover:scale-110" />
+            <p className="mt-4 text-lg font-semibold text-primary">Founder &amp; CEO</p>
+            <div className="leader-details mx-auto mt-7 md:mx-0">
+              <div className="leader-detail">
+                <GraduationCap className="size-4" />
+                <span><small>Education</small><strong>M.Tech</strong></span>
               </div>
-              <div className="text-left">
-                <strong className="block text-2xl">5+ Years</strong>
-                <span className="text-sm text-hero-muted">Experience</span>
+              <div className="leader-detail">
+                <Users className="size-4" />
+                <span><small>Experience</small><strong>5+ years</strong></span>
               </div>
             </div>
             <Button asChild className="mt-8 font-bold">
@@ -120,7 +119,7 @@ function AboutPage() {
 
     <section className="bg-cta py-20 text-hero-foreground"><div className="mx-auto max-w-6xl px-6 md:px-8"><div className="grid gap-px overflow-hidden rounded-lg border border-hero-border bg-hero-border md:grid-cols-2">
       <article className="bg-cta p-8 md:p-12"><div className="grid size-12 place-items-center rounded-md border border-hero-border bg-hero-soft"><Target /></div><p className="mt-6 text-xs font-bold uppercase tracking-[0.24em] text-primary">Our mission</p><h2 className="mt-4 text-3xl font-bold leading-tight md:text-4xl">Make advanced technology useful, responsible and reachable.</h2><p className="mt-5 leading-7 text-hero-muted">We close the distance between a promising idea and meaningful adoption by building with the people, conditions and outcomes that define success.</p></article>
-      <article className="bg-cta p-8 md:p-12"><div className="grid size-12 place-items-center rounded-md border border-hero-border bg-hero-soft"><Eye /></div><p className="mt-6 text-xs font-bold uppercase tracking-[0.24em] text-primary">Our vision</p><h2 className="mt-4 text-3xl font-bold leading-tight md:text-4xl">A future where every learner can shape technology.</h2><p className="mt-5 leading-7 text-hero-muted">We envision curious people becoming confident creators—equipped to solve local challenges and build smarter, more inclusive communities.</p></article>
+      <article className="bg-cta p-8 md:p-12"><div className="grid size-12 place-items-center rounded-md border border-hero-border bg-hero-soft"><Eye /></div><p className="mt-6 text-xs font-bold uppercase tracking-[0.24em] text-primary">Our vision</p><h2 className="mt-4 text-3xl font-bold leading-tight md:text-4xl">A future where every learner can shape technology.</h2><p className="mt-5 leading-7 text-hero-muted">We envision curious people becoming confident creators - equipped to solve local challenges and build smarter, more inclusive communities.</p></article>
     </div></div></section>
 
     <section className="about-journey py-24 text-hero-foreground md:py-32"><div className="mx-auto max-w-5xl px-6 md:px-8">

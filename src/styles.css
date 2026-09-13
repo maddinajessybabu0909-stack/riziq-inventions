@@ -235,19 +235,27 @@
   .liquid-node { position: absolute; z-index: 2; top: 0.25rem; left: -0.68rem; display: grid; width: 1.1rem; height: 1.1rem; place-items: center; border: 3px solid var(--about-surface-deep); border-radius: 999px; background: var(--about-track); }
   .liquid-node span { width: 0.32rem; height: 0.32rem; border-radius: 999px; background: var(--hero-foreground); }
   .liquid-index { color: var(--primary); font-family: var(--font-display); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; }
-  .about-step { position: relative; isolation: isolate; cursor: default; overflow: hidden; transition: background-color 300ms ease, transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms ease; }
-  .about-step:hover { z-index: 1; background-color: color-mix(in oklab, var(--primary) 16%, var(--hero-soft)); transform: translateY(-4px); box-shadow: 0 16px 36px -16px color-mix(in oklab, var(--primary) 60%, transparent); }
+  .about-step { position: relative; isolation: isolate; min-height: 9rem; overflow: hidden; color: var(--hero-foreground); transition: background-color 300ms ease, transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms ease; }
+  .about-step:hover, .about-step:focus-visible { z-index: 1; background-color: color-mix(in oklab, var(--primary) 16%, var(--hero-soft)); transform: translateY(-4px); box-shadow: 0 16px 36px -16px color-mix(in oklab, var(--primary) 60%, transparent); outline: none; }
   .about-step:active { transform: translateY(-2px) scale(0.99); }
   .about-step-glow { position: absolute; inset: 0; z-index: -1; background: radial-gradient(120% 150% at 50% 120%, color-mix(in oklab, var(--primary) 30%, transparent), transparent 65%); opacity: 0; transition: opacity 350ms ease; }
-  .about-step:hover .about-step-glow { opacity: 1; }
+  .about-step:hover .about-step-glow, .about-step:focus-visible .about-step-glow { opacity: 1; }
   .about-step-bar { position: absolute; bottom: 0; left: 0; height: 3px; width: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, var(--primary), oklch(0.72 0.15 194)); transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1); }
-  .about-step:hover .about-step-bar { transform: scaleX(1); }
+  .about-step:hover .about-step-bar, .about-step:focus-visible .about-step-bar { transform: scaleX(1); }
+  .about-step-top { position: relative; display: flex; align-items: center; justify-content: space-between; }
   .about-step-number { display: block; font-size: 0.75rem; font-weight: 800; color: var(--primary); transition: color 250ms ease, transform 250ms ease, letter-spacing 250ms ease; }
-  .about-step:hover .about-step-number { color: var(--hero-foreground); transform: translateX(3px); letter-spacing: 0.08em; }
-  .leader-pill { transition: background-color 250ms ease, border-color 250ms ease, color 250ms ease, transform 250ms ease; }
-  .leader-pill:hover { background-color: color-mix(in oklab, var(--primary) 18%, var(--hero-soft)); border-color: color-mix(in oklab, var(--primary) 55%, transparent); color: var(--hero-foreground); transform: translateY(-1px); }
-  .leader-badge { transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1), border-color 280ms ease, box-shadow 280ms ease, background-color 280ms ease; }
-  .leader-badge:hover { transform: translateY(-3px); border-color: color-mix(in oklab, var(--primary) 55%, transparent); background-color: color-mix(in oklab, var(--primary) 10%, var(--hero-soft)); box-shadow: 0 14px 32px -14px color-mix(in oklab, var(--primary) 55%, transparent); }
+  .about-step:hover .about-step-number, .about-step:focus-visible .about-step-number { color: var(--hero-foreground); transform: translateX(3px); letter-spacing: 0.08em; }
+  .about-step-arrow { width: 1rem; height: 1rem; color: var(--primary); transition: color 250ms ease, transform 300ms cubic-bezier(0.22, 1, 0.36, 1); }
+  .about-step:hover .about-step-arrow, .about-step:focus-visible .about-step-arrow { color: var(--hero-foreground); transform: translate(2px, -2px); }
+  .about-step-title { position: relative; display: block; margin-top: 1.25rem; font-size: 0.95rem; }
+  .about-step-detail { position: relative; display: block; margin-top: 0.4rem; max-width: 10rem; font-size: 0.72rem; line-height: 1.35; color: var(--hero-muted); transition: color 250ms ease; }
+  .about-step:hover .about-step-detail, .about-step:focus-visible .about-step-detail { color: var(--hero-foreground); }
+  .leader-details { display: grid; width: min(100%, 26rem); grid-template-columns: repeat(2, minmax(0, 1fr)); border-block: 1px solid var(--hero-border); }
+  .leader-detail { display: flex; align-items: center; gap: 0.75rem; padding-block: 1rem; color: var(--primary); text-align: left; }
+  .leader-detail + .leader-detail { border-left: 1px solid var(--hero-border); padding-left: 1.25rem; }
+  .leader-detail span { display: grid; gap: 0.15rem; }
+  .leader-detail small { color: var(--hero-muted); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .leader-detail strong { color: var(--hero-foreground); font-size: 0.95rem; }
   .founder-portrait img { transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1); }
   .founder-orbit:hover .founder-portrait img { transform: scale(1.05); }
   .founder-orbit-ring { transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1), border-color 400ms ease; }
