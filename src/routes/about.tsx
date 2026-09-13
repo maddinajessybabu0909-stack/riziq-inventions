@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef } from "react";
-import { ArrowRight, Compass, Eye, FlaskConical, Gauge, GraduationCap, Lightbulb, Target, ThumbsUp, Users } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Compass, Eye, FlaskConical, Gauge, GraduationCap, Lightbulb, Target, ThumbsUp, Users } from "lucide-react";
 
 import classroomImage from "@/assets/riziq-purpose-classroom.png.asset.json";
 import jessyPortrait from "@/assets/jessy-yadav-transparent.png";
@@ -68,8 +68,13 @@ function AboutPage() {
           <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-md border border-hero-border bg-hero-border sm:grid-cols-4">
             {["Learn", "Experiment", "Engineer", "Create impact"].map((item, index) => (
               <div key={item} className="about-step group bg-hero-soft px-4 py-4">
+                <span className="about-step-glow" aria-hidden="true" />
                 <span className="about-step-number">0{index + 1}</span>
-                <strong className="mt-1 block text-sm transition-colors duration-200 group-hover:text-hero-foreground">{item}</strong>
+                <strong className="relative mt-1 flex items-center justify-between gap-2 text-sm transition-colors duration-200 group-hover:text-hero-foreground">
+                  {item}
+                  <ArrowUpRight className="size-3.5 shrink-0 -translate-x-1 translate-y-1 text-primary opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
+                </strong>
+                <span className="about-step-bar" aria-hidden="true" />
               </div>
             ))}
           </div>
@@ -86,14 +91,14 @@ function AboutPage() {
             <h2 className="mt-4 text-3xl font-bold md:text-5xl">Jessy Yadav Maddina</h2>
             <div className="mt-4 flex flex-wrap items-center justify-center gap-2 md:justify-start">
               <span className="text-lg font-semibold text-primary">Founder &amp; CEO</span>
-              <span className="inline-flex items-center gap-1 rounded-full border border-hero-border bg-hero-soft px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-hero-muted">
-                <GraduationCap className="size-3 text-primary" />
+              <span className="leader-pill inline-flex items-center gap-1 rounded-full border border-hero-border bg-hero-soft px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-hero-muted">
+                <GraduationCap className="size-3 text-primary transition-transform duration-300 group-hover:rotate-12" />
                 M.Tech
               </span>
             </div>
-            <div className="mx-auto mt-7 inline-flex items-center gap-4 rounded-lg border border-hero-border bg-hero-soft/60 px-5 py-4 md:mx-0">
-              <div className="grid size-11 place-items-center rounded-md bg-hero-soft text-primary">
-                <Users className="size-5" />
+            <div className="leader-badge group mx-auto mt-7 inline-flex cursor-default items-center gap-4 rounded-lg border border-hero-border bg-hero-soft/60 px-5 py-4 md:mx-0">
+              <div className="grid size-11 place-items-center rounded-md bg-hero-soft text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+                <Users className="size-5 transition-transform duration-300 group-hover:scale-110" />
               </div>
               <div className="text-left">
                 <strong className="block text-2xl">5+ Years</strong>

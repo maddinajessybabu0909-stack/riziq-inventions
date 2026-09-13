@@ -235,10 +235,24 @@
   .liquid-node { position: absolute; z-index: 2; top: 0.25rem; left: -0.68rem; display: grid; width: 1.1rem; height: 1.1rem; place-items: center; border: 3px solid var(--about-surface-deep); border-radius: 999px; background: var(--about-track); }
   .liquid-node span { width: 0.32rem; height: 0.32rem; border-radius: 999px; background: var(--hero-foreground); }
   .liquid-index { color: var(--primary); font-family: var(--font-display); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; }
-  .about-step { cursor: default; transition: background-color 220ms ease, transform 220ms ease, border-color 220ms ease; }
-  .about-step:hover { background-color: color-mix(in oklab, var(--primary) 14%, var(--hero-soft)); transform: translateY(-3px); }
-  .about-step-number { display: block; font-size: 0.75rem; font-weight: 800; color: var(--primary); transition: color 220ms ease, transform 220ms ease; }
-  .about-step:hover .about-step-number { color: var(--hero-foreground); transform: translateX(2px); }
+  .about-step { position: relative; isolation: isolate; cursor: default; overflow: hidden; transition: background-color 300ms ease, transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms ease; }
+  .about-step:hover { z-index: 1; background-color: color-mix(in oklab, var(--primary) 16%, var(--hero-soft)); transform: translateY(-4px); box-shadow: 0 16px 36px -16px color-mix(in oklab, var(--primary) 60%, transparent); }
+  .about-step:active { transform: translateY(-2px) scale(0.99); }
+  .about-step-glow { position: absolute; inset: 0; z-index: -1; background: radial-gradient(120% 150% at 50% 120%, color-mix(in oklab, var(--primary) 30%, transparent), transparent 65%); opacity: 0; transition: opacity 350ms ease; }
+  .about-step:hover .about-step-glow { opacity: 1; }
+  .about-step-bar { position: absolute; bottom: 0; left: 0; height: 3px; width: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, var(--primary), oklch(0.72 0.15 194)); transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1); }
+  .about-step:hover .about-step-bar { transform: scaleX(1); }
+  .about-step-number { display: block; font-size: 0.75rem; font-weight: 800; color: var(--primary); transition: color 250ms ease, transform 250ms ease, letter-spacing 250ms ease; }
+  .about-step:hover .about-step-number { color: var(--hero-foreground); transform: translateX(3px); letter-spacing: 0.08em; }
+  .leader-pill { transition: background-color 250ms ease, border-color 250ms ease, color 250ms ease, transform 250ms ease; }
+  .leader-pill:hover { background-color: color-mix(in oklab, var(--primary) 18%, var(--hero-soft)); border-color: color-mix(in oklab, var(--primary) 55%, transparent); color: var(--hero-foreground); transform: translateY(-1px); }
+  .leader-badge { transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1), border-color 280ms ease, box-shadow 280ms ease, background-color 280ms ease; }
+  .leader-badge:hover { transform: translateY(-3px); border-color: color-mix(in oklab, var(--primary) 55%, transparent); background-color: color-mix(in oklab, var(--primary) 10%, var(--hero-soft)); box-shadow: 0 14px 32px -14px color-mix(in oklab, var(--primary) 55%, transparent); }
+  .founder-portrait img { transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1); }
+  .founder-orbit:hover .founder-portrait img { transform: scale(1.05); }
+  .founder-orbit-ring { transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1), border-color 400ms ease; }
+  .founder-orbit:hover .founder-orbit-ring-outer { transform: scale(1.19); }
+  .founder-orbit:hover .founder-orbit-ring-inner { transform: scale(1.04); border-color: color-mix(in oklab, var(--primary) 75%, transparent); }
 }
 
 @media (max-width: 767px) {
