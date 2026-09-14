@@ -7,10 +7,15 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import { JsonLd } from "@/components/json-ld";
+import { jsonLdGraph, organizationSchema, websiteSchema } from "@/lib/seo";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SITE_LANGUAGE, SITE_NAME } from "@/lib/site";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
 
 function NotFoundComponent() {
@@ -78,11 +83,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "RIZIQ" },
-      { name: "description", content: "Research, innovation and technology solutions by RIZIQ." },
-      { name: "author", content: "RIZIQ" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { title: SITE_NAME },
+      { name: "author", content: SITE_NAME },
+      { name: "application-name", content: SITE_NAME },
+      { name: "format-detection", content: "telephone=no" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -106,7 +110,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang={SITE_LANGUAGE}>
       <head>
         <HeadContent />
       </head>
@@ -123,9 +127,12 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <JsonLd data={jsonLdGraph([organizationSchema(), websiteSchema()])} />
       <SiteHeader />
       <Outlet />
       <SiteFooter />
+      <Analytics />
+      <SpeedInsights />
     </QueryClientProvider>
   );
 }

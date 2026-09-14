@@ -2,25 +2,29 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef } from "react";
 import { ArrowRight, ArrowUpRight, Compass, Eye, FlaskConical, Gauge, GraduationCap, Target, Users } from "lucide-react";
 
-import classroomImage from "@/assets/riziq-purpose-classroom.png.asset.json";
+import classroomImage from "@/assets/riziq-purpose-classroom.png";
 import jessyPortrait from "@/assets/jessy-yadav-transparent.png";
 import { AboutGalleryCarousel } from "@/components/about-gallery-carousel";
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { ImpactStats } from "@/components/impact-stats";
+import { JsonLd } from "@/components/json-ld";
 import { PartnershipSection } from "@/components/partnership-section";
 import { Button } from "@/components/ui/button";
+import { breadcrumbSchema, jsonLdGraph, pageHead, personSchema, webPageSchema } from "@/lib/seo";
 
 const WHATSAPP_LINK = "https://api.whatsapp.com/send?phone=919014314025&text=hi%2C%20I%20need%20to%20discuss%20something%20with%20you%20regarding%20the%20company";
 
+const aboutTitle = "About RIZIQ | Research-Led Engineering & Learning";
+const aboutDescription =
+  "Meet RIZIQ and founder Jessy Yadav Maddina. We combine research, hands-on engineering and practical teaching so students, faculty and organizations can build useful technology.";
+
 export const Route = createFileRoute("/about")({
-  head: () => ({ meta: [
-    { title: "About RIZIQ | Research-Led Technology" },
-    { name: "description", content: "Learn how RIZIQ combines research, engineering and practical delivery to create useful technology." },
-    { property: "og:title", content: "About RIZIQ | Research-Led Technology" },
-    { property: "og:description", content: "A practical innovation partner for ambitious organizations." },
-    { property: "og:type", content: "website" },
-    { name: "twitter:card", content: "summary_large_image" },
-  ] }),
+  head: () => pageHead({
+    title: aboutTitle,
+    description: aboutDescription,
+    path: "/about",
+    image: classroomImage,
+  }),
   component: AboutPage,
 });
 
@@ -69,8 +73,13 @@ function AboutPage() {
   }, []);
 
   return <main className="min-h-screen bg-background">
+    <JsonLd data={jsonLdGraph([
+      webPageSchema({ path: "/about", title: aboutTitle, description: aboutDescription, type: "AboutPage" }),
+      breadcrumbSchema([{ name: "Home", path: "/" }, { name: "About", path: "/about" }]),
+      personSchema(),
+    ])} />
     <section className="about-editorial relative overflow-hidden pb-24 pt-36 text-hero-foreground md:pb-32 md:pt-44">
-      <div className="mx-auto max-w-6xl px-6 md:px-8">
+      <div className="site-container">
         <header className="relative border-b border-hero-border pb-14 md:pb-20">
           <p className="about-kicker">Research · Learning · Engineering</p>
           <h1 className="mt-6 max-w-5xl text-5xl font-bold leading-[0.95] md:text-8xl">We turn curiosity into <span className="text-primary">capability.</span></h1>
@@ -120,13 +129,13 @@ function AboutPage() {
       </div>
     </section>
 
-    <section className="py-20 md:py-28"><div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-[1.08fr_0.92fr] md:px-8">
-      <div className="overflow-hidden rounded-lg shadow-media"><img src={classroomImage.url} alt="Jessy Yadav Maddina teaching microcontrollers in a digital classroom" className="aspect-[8/5] h-full w-full object-cover" width={1482} height={1062} loading="lazy" /></div>
+    <section className="py-20 md:py-28"><div className="site-container grid items-center gap-12 md:grid-cols-[1.08fr_0.92fr]">
+      <div className="overflow-hidden rounded-lg shadow-media"><img src={classroomImage} alt="Jessy Yadav Maddina teaching microcontrollers in a digital classroom" className="aspect-[8/5] h-full w-full object-cover" width={1482} height={1062} loading="lazy" /></div>
       <div><p className="section-kicker">Our purpose</p><h2 className="mt-3 text-3xl font-bold md:text-4xl">Turn knowledge into the confidence to build.</h2><p className="mt-5 leading-7 text-muted-foreground">RIZIQ brings concepts to life through clear teaching, practical experimentation and guided engineering. Learners move from understanding how technology works to creating software, electronics and intelligent systems of their own.</p><Button asChild className="mt-7 font-bold"><Link to="/contact">Learn and build with us <ArrowRight /></Link></Button></div>
     </div></section>
 
     <section className="about-gallery-section bg-section py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-6 md:px-8">
+      <div className="site-container">
         <div className="max-w-2xl">
           <p className="section-kicker">Inside RIZIQ</p>
           <h2 className="mt-3 text-3xl font-bold md:text-5xl">Learning, building and collaborating in action.</h2>
@@ -138,12 +147,12 @@ function AboutPage() {
 
     <PartnershipSection />
 
-    <section className="bg-cta py-20 text-hero-foreground"><div className="mx-auto max-w-6xl px-6 md:px-8"><div className="grid gap-px overflow-hidden rounded-lg border border-hero-border bg-hero-border md:grid-cols-2">
+    <section className="bg-cta py-20 text-hero-foreground"><div className="site-container"><div className="grid gap-px overflow-hidden rounded-lg border border-hero-border bg-hero-border md:grid-cols-2">
       <article className="bg-cta p-8 md:p-12"><div className="grid size-12 place-items-center rounded-md border border-hero-border bg-hero-soft"><Target /></div><p className="mt-6 text-xs font-bold uppercase tracking-[0.24em] text-primary">Our mission</p><h2 className="mt-4 text-3xl font-bold leading-tight md:text-4xl">Make advanced technology useful, responsible and reachable.</h2><p className="mt-5 leading-7 text-hero-muted">We close the distance between a promising idea and meaningful adoption by building with the people, conditions and outcomes that define success.</p></article>
       <article className="bg-cta p-8 md:p-12"><div className="grid size-12 place-items-center rounded-md border border-hero-border bg-hero-soft"><Eye /></div><p className="mt-6 text-xs font-bold uppercase tracking-[0.24em] text-primary">Our vision</p><h2 className="mt-4 text-3xl font-bold leading-tight md:text-4xl">A future where every learner can shape technology.</h2><p className="mt-5 leading-7 text-hero-muted">We envision curious people becoming confident creators - equipped to solve local challenges and build smarter, more inclusive communities.</p></article>
     </div></div></section>
 
-    <section className="about-journey py-24 text-hero-foreground md:py-32"><div className="mx-auto max-w-5xl px-6 md:px-8">
+    <section className="about-journey py-24 text-hero-foreground md:py-32"><div className="site-container">
       <div className="max-w-2xl"><p className="about-kicker">Our journey</p><h2 className="mt-4 text-4xl font-bold md:text-6xl">Built one useful step at a time.</h2><p className="mt-6 text-lg leading-8 text-hero-muted">Our story is not about chasing technology trends. It is about learning where technology can remove friction, expand possibility and earn trust.</p></div>
       <ol ref={timelineRef} className="liquid-timeline mt-20">
         {timeline.map((item, index) => <li key={item.title} className="liquid-timeline-item"><span className="liquid-node" aria-hidden="true"><span /></span><div className="liquid-index">0{index + 1}</div><article><p className="about-kicker">{item.year}</p><h3 className="mt-4 text-2xl font-bold md:text-4xl">{item.title}</h3><p className="mt-4 max-w-xl leading-7 text-hero-muted">{item.text}</p></article></li>)}

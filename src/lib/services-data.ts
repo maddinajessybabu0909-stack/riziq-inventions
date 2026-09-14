@@ -20,6 +20,7 @@ export const services = [
     faqs: [
       { q: "How long does a typical project take?", a: "A focused first release usually takes a few weeks to a few months, depending on scope. We plan it in stages so you see working software early." },
       { q: "Can you work with our existing system?", a: "Yes. We regularly extend or integrate with existing databases, tools and third-party services rather than replacing everything." },
+      { q: "Does RIZIQ provide software projects for CSE and IT students?", a: "Yes. We guide web, mobile and application projects for computer science and IT students, with clear scope, documentation and ethical authorship." },
       { q: "Who owns the code?", a: "You do. Source code, documentation and accounts are handed over to you." },
     ],
   },
@@ -68,6 +69,7 @@ export const services = [
     faqs: [
       { q: "Can you work at one site before scaling?", a: "Yes, and we recommend it. A pilot site proves the sensing approach and cost per node before wider rollout." },
       { q: "What if internet coverage is poor?", a: "Devices store readings locally and sync when the connection returns, so no data is lost." },
+      { q: "Does RIZIQ provide IoT projects for engineering students?", a: "Yes. We support IoT major, mini and applied projects, from sensor selection and Arduino or Raspberry Pi prototypes through to a working dashboard." },
       { q: "Do you supply the hardware?", a: "We can specify it for you to procure, or assemble prototype units ourselves - whichever suits your procurement process." },
     ],
   },
@@ -91,7 +93,7 @@ export const services = [
     tech: ["ROS", "Arduino & STM32", "Python", "OpenCV", "3D printing", "CAD", "PLC & motor control"],
     faqs: [
       { q: "Do you build full production lines?", a: "Our strength is the concept and prototype stage. We validate the approach and hand over findings for integration partners to scale." },
-      { q: "Can students or research teams work with you?", a: "Yes. We support academic robotics projects, lab setups and competition builds." },
+      { q: "Can students or research teams work with you?", a: "Yes. We support academic robotics projects, lab setups, competition builds and hands-on robotics training." },
       { q: "How is safety handled?", a: "Safe stop behaviour, guarding and operating limits are designed in from the first prototype, not added afterwards." },
     ],
   },
@@ -116,6 +118,7 @@ export const services = [
     faqs: [
       { q: "Can you take over firmware someone else started?", a: "Yes. We begin with a short code and hardware review so expectations on effort are clear before we continue." },
       { q: "Do you handle certification?", a: "We prepare designs and documentation with compliance in mind and work alongside your certification lab." },
+      { q: "Does RIZIQ provide VLSI and embedded systems training?", a: "Yes. We support embedded firmware, FPGA and VLSI foundations through project guidance and practical workshop sessions." },
       { q: "What do we receive at the end?", a: "Source firmware, build instructions, test results and a handover document for your manufacturing partner." },
     ],
   },
@@ -140,6 +143,9 @@ export const services = [
     faqs: [
       { q: "What group sizes do you handle?", a: "From small team sessions to full classroom cohorts. Hands-on labs work best in smaller groups with shared kits." },
       { q: "Do participants need prior experience?", a: "No. We set the starting level after a short assessment of the group." },
+      { q: "Does RIZIQ provide CRT and campus development training?", a: "Yes. Campus Recruitment Training and Career Development Cell programmes are part of our institutional offering, alongside technical workshops." },
+      { q: "Does RIZIQ provide Faculty Development Programs?", a: "Yes. We run FDP sessions for colleges, including curriculum support, lab guidance and train-the-trainer formats." },
+      { q: "Does RIZIQ help with major, mini and micro projects?", a: "Yes. We guide student engineering projects across software, IoT, embedded systems, robotics and core branches, with ethical project-based learning." },
       { q: "Can sessions run online?", a: "Yes, with simulation and remote labs, though hardware sessions are far stronger in person." },
     ],
   },
@@ -164,6 +170,7 @@ export const services = [
     faqs: [
       { q: "Can you work from a sketch or existing part?", a: "Yes. We can begin from sketches, measurements, photographs or an existing CAD file after reviewing the required accuracy." },
       { q: "Do you provide simulation reports?", a: "Yes. Reports state assumptions, boundary conditions, results and practical design recommendations." },
+      { q: "Does RIZIQ provide Mechanical Engineering student projects?", a: "Yes. We support CAD modelling, CAE analysis and documentation for academic mechanical projects, while keeping the student's authorship clear." },
       { q: "Can files be prepared for manufacturing?", a: "Yes. We provide suitable model formats and drawings for discussion with your chosen fabricator or manufacturer." },
     ],
   },
@@ -188,6 +195,7 @@ export const services = [
     faqs: [
       { q: "Can you improve an existing MATLAB model?", a: "Yes. We review the current code or model, identify gaps and agree the required corrections or extensions." },
       { q: "Can simulation connect to hardware work?", a: "Yes. Models can support controller design, hardware-in-loop preparation and later embedded implementation." },
+      { q: "Does RIZIQ provide MATLAB training?", a: "Yes. We support MATLAB and Simulink through modelling work, documented simulation and guided training for students and engineering teams." },
       { q: "Will the model be explained?", a: "Yes. Handover includes readable files and an explanation of assumptions, parameters and results." },
     ],
   },
@@ -212,7 +220,7 @@ export const services = [
     faqs: [
       { q: "Can you work with survey or existing drawing files?", a: "Yes. We first review file quality, units and coordinate information before beginning design work." },
       { q: "Do you provide signed statutory approvals?", a: "No. Where statutory certification is required, the final design must be reviewed and signed by the appropriately licensed professional." },
-      { q: "Can you support student civil projects?", a: "Yes. We provide ethical guidance, modelling and documentation support while keeping the student's authorship clear." },
+      { q: "Does RIZIQ provide Civil Engineering student projects?", a: "Yes. We provide ethical guidance, modelling and documentation support for civil projects while keeping the student's authorship clear." },
     ],
   },
   {
@@ -236,6 +244,7 @@ export const services = [
     faqs: [
       { q: "Do you guarantee publication?", a: "No one honestly can. We strengthen the work and the writing so it stands the best chance with reviewers." },
       { q: "Is this ethical support?", a: "Yes. We guide, review and teach. The research and authorship remain yours - we do not sell authorship or fabricate results." },
+      { q: "Does RIZIQ help with research paper writing and publication?", a: "Yes. We guide topic selection, literature review, methodology, manuscript preparation and revision. The research and authorship remain yours." },
       { q: "Can you help with a thesis as well?", a: "Yes, including structure, methodology chapters and defence preparation." },
     ],
   },

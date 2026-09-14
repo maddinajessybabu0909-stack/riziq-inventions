@@ -1,7 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, Check, Mail, MessageSquare, Phone, Sparkles } from "lucide-react";
 
+import { JsonLd } from "@/components/json-ld";
 import { Button } from "@/components/ui/button";
+import { breadcrumbSchema, faqSchema, jsonLdGraph, pageHead, serviceSchema, serviceSeo, webPageSchema } from "@/lib/seo";
 import { getService, services } from "@/lib/services-data";
 
 export const Route = createFileRoute("/services/$service")({
@@ -10,16 +12,22 @@ export const Route = createFileRoute("/services/$service")({
     if (!service) throw notFound();
     return service;
   },
-  head: ({ loaderData }) => ({
-    meta: [
-      { title: loaderData ? `${loaderData.title} | RIZIQ Services` : "Service Unavailable | RIZIQ" },
-      { name: "description", content: loaderData?.short ?? "This RIZIQ service is unavailable." },
-      { property: "og:title", content: loaderData ? `${loaderData.title} | RIZIQ Services` : "Service Unavailable | RIZIQ" },
-      { property: "og:description", content: loaderData?.short ?? "This RIZIQ service is unavailable." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: ({ loaderData }) => {
+    if (!loaderData) {
+      return pageHead({
+        title: "Service Unavailable | RIZIQ",
+        description: "This RIZIQ service is unavailable.",
+        path: "/services",
+        noindex: true,
+      });
+    }
+    const seo = serviceSeo[loaderData.slug];
+    return pageHead({
+      title: seo?.title ?? `${loaderData.title} | RIZIQ Services`,
+      description: seo?.description ?? loaderData.short,
+      path: `/services/${loaderData.slug}`,
+    });
+  },
   component: ServiceDetail,
 });
 
@@ -31,6 +39,20 @@ function ServiceDetail() {
 
   return (
     <main className={`service-detail min-h-screen bg-background ${tone}`}>
+      <JsonLd data={jsonLdGraph([
+        webPageSchema({
+          path: `/services/${service.slug}`,
+          title: serviceSeo[service.slug]?.title ?? `${service.title} | RIZIQ Services`,
+          description: serviceSeo[service.slug]?.description ?? service.short,
+        }),
+        breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+          { name: service.title, path: `/services/${service.slug}` },
+        ]),
+        serviceSchema(service),
+        faqSchema(service.faqs),
+      ])} />
       <section className="service-detail-hero pt-32 md:pt-40">
         <div className="mx-auto max-w-6xl px-6 pb-14 md:px-8 md:pb-20">
           <div className="service-detail-domain">

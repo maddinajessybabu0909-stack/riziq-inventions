@@ -1,25 +1,34 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
+import { JsonLd } from "@/components/json-ld";
 import { Button } from "@/components/ui/button";
+import { breadcrumbSchema, jsonLdGraph, pageHead, serviceListSchema, webPageSchema } from "@/lib/seo";
 import { services } from "@/lib/services-data";
 
 const tones = ["schematic-blue", "schematic-violet", "schematic-teal", "schematic-amber"] as const;
 
+const servicesTitle = "Engineering Services | Projects, Training & Research | RIZIQ";
+const servicesDescription =
+  "Explore RIZIQ services across software, AI, IoT, robotics, embedded systems, VLSI, MATLAB, mechanical and civil design, student projects, workshops, FDP, CRT and research publications.";
+
 export const Route = createFileRoute("/services/")({
-  head: () => ({ meta: [
-    { title: "Technology Services | RIZIQ" },
-    { name: "description", content: "Explore RIZIQ services across software, AI, IoT, robotics, embedded and VLSI, mechanical, simulation, civil design, training and research." },
-    { property: "og:title", content: "Technology Services | RIZIQ" },
-    { property: "og:description", content: "End-to-end technology services from research through delivery." },
-    { property: "og:type", content: "website" },
-    { name: "twitter:card", content: "summary_large_image" },
-  ] }), component: ServicesPage,
+  head: () => pageHead({
+    title: servicesTitle,
+    description: servicesDescription,
+    path: "/services",
+  }),
+  component: ServicesPage,
 });
 
 function ServicesPage() {
   return (
     <main className="min-h-screen bg-hero text-hero-foreground">
+      <JsonLd data={jsonLdGraph([
+        webPageSchema({ path: "/services", title: servicesTitle, description: servicesDescription, type: "CollectionPage" }),
+        breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }]),
+        serviceListSchema(),
+      ])} />
       <section className="services-schematic-hero pt-32 md:pt-40">
         <div className="pointer-events-none absolute -left-10 -top-10 size-32 rounded-full bg-[color-mix(in_oklab,var(--schematic-teal)_10%,transparent)] blur-3xl" />
         <div className="mx-auto max-w-6xl px-6 pb-16 md:px-8 md:pb-20">

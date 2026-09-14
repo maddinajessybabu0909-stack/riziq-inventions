@@ -1,7 +1,7 @@
-import hexabotImage from "@/assets/project-ai-hexabot.jpg.asset.json";
-import smartClassroomImage from "@/assets/project-smart-classroom.jpg.asset.json";
-import electricVehicleImage from "@/assets/project-electric-vehicle.jpg.asset.json";
-import serviceRobotImage from "@/assets/project-service-robot.jpg.asset.json";
+import hexabotImage from "@/assets/project-ai-hexabot.jpg";
+import smartClassroomImage from "@/assets/project-smart-classroom.jpg";
+import electricVehicleImage from "@/assets/project-electric-vehicle.jpg";
+import serviceRobotImage from "@/assets/project-service-robot.jpg";
 
 export const projects = [
   {
@@ -9,7 +9,7 @@ export const projects = [
     industry: "AI robotics",
     title: "AI-Powered Hexabot",
     summary: "A six-legged research platform that combines stable movement, environmental sensing and intelligent navigation for demanding terrain.",
-    image: hexabotImage.url,
+    image: hexabotImage,
     imageAlt: "Six-legged AI robotics prototype being tested in an engineering lab",
     challenge: "Wheeled robots struggle on steps, debris and irregular surfaces. The project needed a compact platform that could coordinate six legs, remain balanced and react to obstacles without relying on constant manual control.",
     approach: "The system was divided into mechanical, embedded and intelligence layers. Leg geometry and gait sequences were tested first, followed by sensor fusion, motion control and repeatable navigation trials on varied surfaces.",
@@ -24,7 +24,7 @@ export const projects = [
     industry: "IoT and education technology",
     title: "Smart Classrooms Using Intelligent Systems and AI",
     summary: "A connected classroom concept that brings teaching tools, environmental data and AI-assisted learning support into one practical system.",
-    image: smartClassroomImage.url,
+    image: smartClassroomImage,
     imageAlt: "Teacher and students using intelligent systems in a connected classroom",
     challenge: "Digital classrooms often consist of disconnected screens, sensors and applications. Teachers need technology that supports lessons and lab work without creating additional complexity or replacing human guidance.",
     approach: "We mapped classroom routines, equipment use and common learning barriers before connecting the most useful signals. The design prioritised simple teacher controls, visible classroom conditions and assistance that stays under educator supervision.",
@@ -39,7 +39,7 @@ export const projects = [
     industry: "Electric mobility",
     title: "Electric Vehicle Systems",
     summary: "A working EV development platform focused on safe energy management, motor control and live system visibility.",
-    image: electricVehicleImage.url,
+    image: electricVehicleImage,
     imageAlt: "Engineers developing battery and motor control systems for an electric vehicle",
     challenge: "An electric vehicle prototype must coordinate the battery, motor, controller and safety systems while making operating conditions easy to inspect. The team needed a development setup suitable for testing before road deployment.",
     approach: "The powertrain was broken into testable subsystems. Battery sensing, protection, motor control and communications were validated independently before integration, with clear checkpoints for temperature, voltage and fault behaviour.",
@@ -54,7 +54,7 @@ export const projects = [
     industry: "Service robotics and IoT",
     title: "Autonomous Serving Robot",
     summary: "A mobile service robot concept built to carry items, navigate shared spaces and support routine delivery tasks safely.",
-    image: serviceRobotImage.url,
+    image: serviceRobotImage,
     imageAlt: "Autonomous serving robot being tested in an indoor corridor",
     challenge: "Indoor delivery environments are dynamic: people move unpredictably, routes change and the robot must stop safely near obstacles. The system also needed an easy way for staff to assign and monitor tasks.",
     approach: "The work began with route mapping and human interaction scenarios. Navigation, obstacle detection, load stability and task controls were then tested together in increasingly realistic indoor trials.",

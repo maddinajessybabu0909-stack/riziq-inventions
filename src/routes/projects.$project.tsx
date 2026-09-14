@@ -1,8 +1,10 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, Check, Mail, Phone } from "lucide-react";
 
+import { JsonLd } from "@/components/json-ld";
 import { Button } from "@/components/ui/button";
 import { getProject } from "@/lib/projects-data";
+import { breadcrumbSchema, jsonLdGraph, pageHead, projectSchema, webPageSchema } from "@/lib/seo";
 
 export const Route = createFileRoute("/projects/$project")({
   loader: ({ params }) => {
@@ -10,21 +12,44 @@ export const Route = createFileRoute("/projects/$project")({
     if (!project) throw notFound();
     return project;
   },
-  head: ({ loaderData }) => ({ meta: [
-    { title: loaderData ? `${loaderData.title} | RIZIQ` : "Project Unavailable | RIZIQ" },
-    { name: "description", content: loaderData?.summary ?? "This RIZIQ project is unavailable." },
-    { property: "og:title", content: loaderData ? `${loaderData.title} | RIZIQ` : "Project Unavailable | RIZIQ" },
-    { property: "og:description", content: loaderData?.summary ?? "This RIZIQ project is unavailable." },
-    { property: "og:type", content: "article" },
-    { name: "twitter:card", content: "summary_large_image" },
-  ] }),
+  head: ({ loaderData }) => {
+    if (!loaderData) {
+      return pageHead({
+        title: "Project Unavailable | RIZIQ",
+        description: "This RIZIQ project is unavailable.",
+        path: "/projects",
+        noindex: true,
+      });
+    }
+    return pageHead({
+      title: `${loaderData.title} | Engineering Case Study | RIZIQ`,
+      description: loaderData.summary,
+      path: `/projects/${loaderData.slug}`,
+      image: loaderData.image,
+      type: "article",
+    });
+  },
   component: ProjectDetail,
 });
 
 function ProjectDetail() {
   const project = Route.useLoaderData();
   return <main className="min-h-screen bg-background">
-    <section className="project-story-hero pt-32 text-hero-foreground md:pt-40"><div className="mx-auto grid max-w-6xl items-end gap-10 px-6 pb-10 md:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:pb-0"><header className="pb-6 lg:pb-16"><p className="text-xs font-bold uppercase tracking-[0.24em] text-hero-muted">{project.industry}</p><h1 className="mt-4 text-4xl font-bold leading-tight md:text-6xl">{project.title}</h1><p className="mt-6 max-w-xl text-lg leading-8 text-hero-muted">{project.summary}</p></header><div className="project-story-image"><img src={project.image} alt={project.imageAlt} className="h-full w-full object-cover" width={1440} height={960} /></div></div></section>
+    <JsonLd data={jsonLdGraph([
+      webPageSchema({
+        path: `/projects/${project.slug}`,
+        title: `${project.title} | Engineering Case Study | RIZIQ`,
+        description: project.summary,
+        type: "ItemPage",
+      }),
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Projects", path: "/projects" },
+        { name: project.title, path: `/projects/${project.slug}` },
+      ]),
+      projectSchema(project),
+    ])} />
+    <section className="project-story-hero text-hero-foreground"><div className="project-story-hero-inner"><header className="project-story-copy"><p className="text-xs font-bold uppercase tracking-[0.24em] text-hero-muted">{project.industry}</p><h1 className="mt-4 text-4xl font-bold leading-tight md:text-6xl">{project.title}</h1><p className="mt-6 max-w-xl text-lg leading-8 text-hero-muted">{project.summary}</p></header><div className="project-story-image"><img src={project.image} alt={project.imageAlt} width={1440} height={960} /></div></div></section>
     <section className="py-16 md:py-24"><div className="mx-auto max-w-6xl px-6 md:px-8">
       <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20"><aside className="lg:sticky lg:top-28 lg:self-start"><p className="section-kicker">Project overview</p><h2 className="mt-3 text-3xl font-bold leading-tight">From a practical need to a working system.</h2><ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">{project.capabilities.map((capability) => <li key={capability} className="project-capability"><Check className="size-4" /> <span>{capability}</span></li>)}</ul></aside>
         <div className="project-story-sections">{[["01", "The challenge", project.challenge], ["02", "Our approach", project.approach], ["03", "The system", project.solution]].map(([number, title, text]) => <section key={title} className="project-story-section"><span>{number}</span><div><p className="section-kicker">{title}</p><h2 className="sr-only">{title}</h2><p className="mt-4 text-lg leading-8">{text}</p></div></section>)}</div>

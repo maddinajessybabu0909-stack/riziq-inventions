@@ -1,0 +1,54 @@
+# RIZIQ
+
+> RIZIQ (RIZIQ Inventions) is a research-led technology company that turns research into useful engineering systems, student and industry projects, and practical technical training.
+
+RIZIQ helps businesses, colleges, faculty and students move from an idea to a working system. The company combines software, AI, IoT, robotics, embedded systems, mechanical and civil design support, MATLAB simulation, research publication guidance, and hands-on training.
+
+## Key facts
+
+- Legal name: RIZIQ Inventions
+- Website: https://riziq.in
+- Email: info@riziq.in
+- Phone: +91 90143-14025
+- Founder and CEO: Jessy Yadav Maddina (M.Tech)
+- Area served: India
+- LinkedIn: https://www.linkedin.com/company/riziq-inventions/
+- Instagram: https://www.instagram.com/riziq.in/
+- Registered under India's MSME programme
+
+## Services
+
+- [Software Development](https://riziq.in/services/software-development): custom web, mobile, cloud and integration software
+- [AI & Machine Learning](https://riziq.in/services/ai-machine-learning): practical AI, computer vision, NLP and GenAI systems
+- [IoT & Smart Systems](https://riziq.in/services/iot-solutions): sensors, Arduino, Raspberry Pi and monitoring systems
+- [Robotics & Automation](https://riziq.in/services/robotics): robotics prototypes, motion control and automation concepts
+- [Embedded Systems & VLSI](https://riziq.in/services/embedded-systems): firmware, FPGA, PCB and VLSI foundations
+- [Training & Institutional Programs](https://riziq.in/services/training-workshops): student projects, workshops, FDP, CRT and CDC programs
+- [Mechanical Engineering & CAD/CAE](https://riziq.in/services/mechanical-engineering-cad-cae): SolidWorks, CATIA, ANSYS, CAD and 3D printing preparation
+- [MATLAB & Engineering Simulation](https://riziq.in/services/matlab-engineering-simulation): MATLAB, Simulink and system modelling
+- [Civil Engineering & Design](https://riziq.in/services/civil-engineering-design): AutoCAD, Civil 3D and structural documentation
+- [Research & Publications](https://riziq.in/services/research-publications): ethical research assistance, paper writing and publication readiness
+
+## Project case studies
+
+- [AI-Powered Hexabot](https://riziq.in/projects/ai-powered-hexabot)
+- [Smart Classrooms Using Intelligent Systems and AI](https://riziq.in/projects/ai-smart-classroom)
+- [Electric Vehicle Systems](https://riziq.in/projects/electric-vehicle-systems)
+- [Autonomous Serving Robot](https://riziq.in/projects/autonomous-serving-robot)
+
+## Who RIZIQ serves
+
+Students, faculty, colleges, researchers, engineering teams and organizations that need project support, technical training or applied research help.
+
+## Important answers
+
+- Yes, RIZIQ provides engineering projects, including major, mini and applied hardware/software projects.
+- Yes, RIZIQ provides IoT, robotics, embedded, software, mechanical and civil project support.
+- Yes, RIZIQ provides research paper assistance and publication guidance. Authorship and results remain with the researcher.
+- Yes, RIZIQ conducts technical workshops, Faculty Development Programs (FDP), Campus Recruitment Training (CRT) and campus development programs.
+- Yes, RIZIQ supports MATLAB, VLSI foundations, CAD/CAE and engineering software training.
+- RIZIQ does not guarantee journal acceptance and does not sell authorship.
+
+## Contact
+
+[Contact RIZIQ](https://riziq.in/contact)

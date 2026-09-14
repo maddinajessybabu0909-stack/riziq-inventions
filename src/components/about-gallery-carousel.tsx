@@ -1,25 +1,25 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-import agreementImage from "@/assets/riziq-gallery-agreement.jpeg.asset.json";
-import boardSessionImage from "@/assets/riziq-gallery-board-session.png.asset.json";
-import classroomImage from "@/assets/riziq-gallery-classroom.png.asset.json";
-import collaborationImage from "@/assets/riziq-gallery-collaboration.png.asset.json";
-import conferenceImage from "@/assets/riziq-gallery-conference.png.asset.json";
-import labTrainingImage from "@/assets/riziq-gallery-computer-lab-training.png.asset.json";
-import labWideImage from "@/assets/riziq-gallery-computer-lab-wide.png.asset.json";
-import recognitionImage from "@/assets/riziq-gallery-recognition.png.asset.json";
+import agreementImage from "@/assets/riziq-gallery-agreement.jpeg";
+import boardSessionImage from "@/assets/riziq-gallery-board-session.png";
+import classroomImage from "@/assets/riziq-gallery-classroom.png";
+import collaborationImage from "@/assets/riziq-gallery-collaboration.png";
+import conferenceImage from "@/assets/riziq-gallery-conference.png";
+import labTrainingImage from "@/assets/riziq-gallery-computer-lab-training.png";
+import labWideImage from "@/assets/riziq-gallery-computer-lab-wide.png";
+import recognitionImage from "@/assets/riziq-gallery-recognition.png";
 import { Button } from "@/components/ui/button";
 
 const galleryImages = [
-  { src: classroomImage.url, alt: "RIZIQ instructor leading a classroom session", caption: "Learning in action" },
-  { src: labTrainingImage.url, alt: "Students attending a technology training session in a computer lab", caption: "Practical technology training" },
-  { src: boardSessionImage.url, alt: "RIZIQ instructor explaining embedded systems at a classroom board", caption: "Engineering concepts made clear" },
-  { src: labWideImage.url, alt: "Students learning together in a computer laboratory", caption: "Hands-on learning environments" },
-  { src: recognitionImage.url, alt: "RIZIQ founder receiving recognition at an institution", caption: "Honored for the great work", position: "center 22%" },
-  { src: collaborationImage.url, alt: "RIZIQ representatives presenting a collaboration document", caption: "Institutional collaboration" },
-  { src: conferenceImage.url, alt: "RIZIQ founder with educators and industry representatives at a conference", caption: "External Co-Chair at International Conference" },
-  { src: agreementImage.url, alt: "RIZIQ representatives marking an institutional agreement", caption: "Partnerships built for impact" },
+  { src: classroomImage, alt: "RIZIQ instructor leading a classroom session", caption: "Learning in action" },
+  { src: labTrainingImage, alt: "Students attending a technology training session in a computer lab", caption: "Practical technology training" },
+  { src: boardSessionImage, alt: "RIZIQ instructor explaining embedded systems at a classroom board", caption: "Engineering concepts made clear" },
+  { src: labWideImage, alt: "Students learning together in a computer laboratory", caption: "Hands-on learning environments" },
+  { src: recognitionImage, alt: "RIZIQ founder receiving recognition at an institution", caption: "Honored for the great work", position: "center 22%" },
+  { src: collaborationImage, alt: "RIZIQ representatives presenting a collaboration document", caption: "Institutional collaboration" },
+  { src: conferenceImage, alt: "RIZIQ founder with educators and industry representatives at a conference", caption: "External Co-Chair at International Conference" },
+  { src: agreementImage, alt: "RIZIQ representatives marking an institutional agreement", caption: "Partnerships built for impact" },
 ];
 
 function getVisibleCount() {
@@ -47,7 +47,14 @@ export function AboutGalleryCarousel() {
     const updateVisibleCount = () => setVisibleCount(getVisibleCount());
     updateVisibleCount();
     window.addEventListener("resize", updateVisibleCount);
-    return () => window.removeEventListener("resize", updateVisibleCount);
+    // Browser zoom changes the visual viewport without consistently triggering
+    // a window resize in every browser. Keep the carousel's responsive layout
+    // in sync with the rest of the page when the zoom level changes.
+    window.visualViewport?.addEventListener("resize", updateVisibleCount);
+    return () => {
+      window.removeEventListener("resize", updateVisibleCount);
+      window.visualViewport?.removeEventListener("resize", updateVisibleCount);
+    };
   }, []);
 
   useEffect(() => {

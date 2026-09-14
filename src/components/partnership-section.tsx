@@ -1,6 +1,6 @@
 import { ArrowUpRight, CircuitBoard, Code2, Globe, GraduationCap, Instagram, Linkedin, Wrench } from "lucide-react";
 
-import instructIqSymbol from "@/assets/instructiq-symbol.png.asset.json";
+import instructIqSymbol from "@/assets/instructiq-symbol.png";
 
 const partnerLinks = [
   { icon: Globe, label: "Website", href: "https://www.instructiq.in" },
@@ -13,13 +13,13 @@ const partnerLinks = [
 export function PartnershipSection({ compact = false }: { compact?: boolean }) {
   return (
     <section className={`partnership-section ${compact ? "partnership-section-compact" : ""}`}>
-      <div className="mx-auto max-w-6xl px-6 md:px-8">
+      <div className="site-container">
         <div className="partnership-frame">
           <div className="partnership-brand">
             <p className="partnership-kicker">Partnership · Collaboration</p>
             <div className="partnership-identity">
               <img
-                src={instructIqSymbol.url}
+                src={instructIqSymbol}
                 alt="InstructIQ symbol"
                 className="partnership-symbol"
                 width={500}
